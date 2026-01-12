@@ -1,7 +1,7 @@
+import Topbanner from "./Components/Banner/Topbanner";
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center  font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16  dark:bg-black sm:items-start"></main>
-    </div>
+    <div className="flex  items-center mt- justify-center  font-sans dark:bg-black"></div>
   );
 }
