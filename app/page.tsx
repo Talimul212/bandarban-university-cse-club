@@ -1,7 +1,12 @@
-import Topbanner from "./Components/Banner/Topbanner";
+import HeroSlider from "./Components/Home/HeroSlider/HeroSlider";
+import { slideData } from "./Components/Home/HeroSlider/SlidesData";
+import OurCommunity from "./Components/Home/OurCommunity/OurCommunity";
 
 export default function Home() {
   return (
-    <div className="flex  items-center mt- justify-center  font-sans dark:bg-black"></div>
+    <div className="">
+      <HeroSlider slides={slideData} />
+      <OurCommunity />
+    </div>
   );
 }
