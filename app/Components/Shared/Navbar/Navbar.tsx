@@ -104,7 +104,7 @@ export default function Navbar() {
       {/* Mobile Drawer */}
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-[#dafbe7]/95 shadow-xl z-50 
-    transform transition-transform duration-300 overflow-y-auto
+    transform transition-transform duration-500 overflow-y-auto
     ${drawerOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         {/* Drawer Header */}
@@ -148,7 +148,8 @@ export default function Navbar() {
             className="bg-linear-to-r from-[#ff6900] to-[#ffaa00] text-white px-4 py-2 rounded-full font-semibold flex items-center gap-2 uppercase border border-amber-50 hover:from-[#ffaa00] hover:to-[#ff6900] transition"
             onClick={() => setDrawerOpen(false)}
           >
-            <User2 /> Join Us Now
+            <User2 />
+            Get Involved
           </Link>
         </div>
       </div>
