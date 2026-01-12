@@ -28,7 +28,7 @@ export default function Topbanner() {
         <div className="flex flex-col md:flex-row justify-center items-center gap-4">
           <Link
             href="/join"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#ff6900] to-[#ffaa00] text-white px-6 py-3 rounded-full font-semibold uppercase hover:from-[#ffaa00] hover:to-[#ff6900] transition"
+            className="inline-flex items-center gap-2 bg-linear-to-r from-[#ff6900] to-[#ffaa00] text-white px-6 py-3 rounded-full font-semibold uppercase hover:from-[#ffaa00] hover:to-[#ff6900] transition"
           >
             <Users size={20} /> Join Our Community
           </Link>

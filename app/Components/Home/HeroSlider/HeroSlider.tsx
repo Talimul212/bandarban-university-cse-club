@@ -15,8 +15,8 @@ type Slide = {
   subtitle: string;
   buttonText?: string;
   buttonLink?: string;
-  quota: string;
-  icon: any;
+  // quota: string;
+  // icon: any;
 };
 
 interface Props {
