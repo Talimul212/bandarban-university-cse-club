@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Components/Shared/Navbar/Navbar";
 import Footer from "./Components/Shared/Footer/Footer";
+import "aos/dist/aos.css";
+import AOSProvider from "./Components/AOSProvider";
+import BackToTop from "./Components/BackToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,8 +35,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <AOSProvider />
         <Navbar />
         <main className="min-h-screen">{children}</main>
+        <BackToTop />
         <Footer />
       </body>
     </html>
