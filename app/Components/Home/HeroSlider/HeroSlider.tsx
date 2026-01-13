@@ -91,7 +91,7 @@ export default function HeroSlider({ slides }: Props) {
       </Swiper>
 
       {/* Navigation buttons */}
-      <div className="absolute bottom-37.5 md:bottom-24 left-36  md:left-6 z-20 flex gap-3">
+      <div className="absolute bottom-37.5 md:bottom-24 left-36  md:left-16 z-20 flex gap-3">
         <button className="swiper-button-prev-custom flex h-10 w-10 items-center justify-center rounded-full bg-white/80 hover:bg-white">
           <ChevronLeft className="text-[#ff6900]" />
         </button>
