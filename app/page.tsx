@@ -1,7 +1,9 @@
+import OurCourses from "./Components/Home/Course/Course";
 import HeroSlider from "./Components/Home/HeroSlider/HeroSlider";
 import { slideData } from "./Components/Home/HeroSlider/SlidesData";
 import HistorySection from "./Components/Home/HistorySection/HistorySection";
 import OurCommunity from "./Components/Home/OurCommunity/OurCommunity";
+import OurTeam from "./Components/Home/Team/Team";
 
 export default function Home() {
   return (
@@ -9,6 +11,8 @@ export default function Home() {
       <HeroSlider slides={slideData} />
       <HistorySection />
       <OurCommunity />
+      <OurCourses />
+      <OurTeam />
     </div>
   );
 }
