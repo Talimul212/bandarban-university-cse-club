@@ -44,7 +44,7 @@ const teamMembers: Member[] = [
 export default function OurTeam() {
   return (
     <section className="py-24 px-6">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto w-[95%]">
         {/* Header */}
         <div data-aos="fade-down" className="mb-14 text-center">
           <h2 className="mb-4 text-4xl font-bold">
