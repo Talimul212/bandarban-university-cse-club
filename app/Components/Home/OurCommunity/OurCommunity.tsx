@@ -64,14 +64,14 @@ export default function OurCommunity() {
           // data-aos="fade-left"
           className="flex w-52 md:w-full  items-center ms-16 justify-center md:mt-5  "
         >
-          <div className="relative grid grid-cols-2  gap-6 rotate-45">
+          <div className="relative grid grid-cols-2  md:gap-6 gap-2 rotate-45">
             {images.map((img, i) => (
               <Tooltip.Provider key={i}>
                 <Tooltip.Root>
                   <Tooltip.Trigger asChild>
                     <div
-                      className="group relative h-26 w-26 overflow-hidden bg-[#09c558]/30 transition-all duration-300 hover:-rotate-45 hover:scale-110 hover:rounded-lg md:h-40 md:w-40 rounded-md
-                 border-3 border-[#09c558]"
+                      className="group relative h-24 w-24 overflow-hidden bg-[#09c558]/30 transition-all duration-300 hover:-rotate-45 hover:scale-110 hover:rounded-lg md:h-40 md:w-40 rounded-md
+                 border-2 border-[#09c558]"
                     >
                       <Image
                         src={img.src}
