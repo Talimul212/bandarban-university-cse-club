@@ -108,11 +108,11 @@ export default function OurTeam() {
             ))}
           </Swiper>
           {/* Navigation buttons */}
-          <div className="absolute -bottom-7 left-6 z-20 flex gap-3">
-            <button className="swiper-team-button-prev h-10 w-10 rounded-full bg-[#09c558] shadow text-center flex items-center justify-center cursor-pointer">
+          <div className="absolute -bottom-16 md:left-0 left-1/3 md:right-auto right-1/3 z-20 flex gap-3">
+            <button className="swiper-team-button-prev h-10 w-10 border border-green-500 rounded-full bg-white/80 shadow text-center flex items-center justify-center cursor-pointer">
               <ChevronLeft className="text-[#ff6900]" />
             </button>
-            <button className="swiper-team-button-next h-10 w-10 rounded-full bg-[#09c558] shadow text-center flex items-center justify-center cursor-pointer">
+            <button className="swiper-team-button-next h-10 w-10 border border-green-500 rounded-full bg-white/80  shadow text-center flex items-center justify-center cursor-pointer">
               <ChevronRight className="text-[#ff6900]" />
             </button>
           </div>

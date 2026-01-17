@@ -25,7 +25,7 @@ const navLinks = [
   { name: "Events", href: "/events", icon: <CalendarDays size={18} /> },
   { name: "Courses", href: "/courses", icon: <BookOpen size={18} /> },
   { name: "Gallery", href: "/gallery", icon: <Images size={18} /> },
-  { name: "Contact", href: "/contact", icon: <Mail size={18} /> },
+  { name: "Contributors", href: "/contributors", icon: <Mail size={18} /> },
 ];
 
 export default function Navbar() {
@@ -77,7 +77,7 @@ export default function Navbar() {
 
         {/* Join Button */}
         <Link
-          href="/join"
+          href="/member/register"
           className="hidden md:flex bg-linear-to-r from-[#ff6900] to-[#ffaa00] text-white px-4 py-2 rounded-full font-semibold items-center gap-2 uppercase border border-amber-50 hover:from-[#ffaa00] hover:to-[#ff6900] transition"
         >
           <User2 /> Get Involved
@@ -144,7 +144,7 @@ export default function Navbar() {
         {/* Join Button */}
         <div className="px-6 mt-4 mb-10">
           <Link
-            href="/join"
+            href="/member/register"
             className="bg-linear-to-r from-[#ff6900] to-[#ffaa00] text-white px-4 py-2 rounded-full font-semibold flex items-center gap-2 uppercase border border-amber-50 hover:from-[#ffaa00] hover:to-[#ff6900] transition"
             onClick={() => setDrawerOpen(false)}
           >
