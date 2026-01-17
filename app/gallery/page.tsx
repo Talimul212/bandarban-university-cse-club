@@ -32,6 +32,7 @@ const images = [
   "/gallery/24.jpg",
   "/gallery/25.jpg",
   "/gallery/26.jpg",
+  "/images/",
 ];
 export default function GallerySection() {
   // const [images, setImages] = useState<string[]>([]);
