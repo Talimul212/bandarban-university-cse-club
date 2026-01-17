@@ -1,27 +1,30 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { GalleryThumbnails } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
-// Auto-generated list of image paths
-const imageCount = 26; // update based on how many images are in /public/gallery
-const images = Array.from(
-  { length: imageCount },
-  (_, i) => `/gallery/${i + 1}.jpg`
-);
-
 export default function GallerySection() {
+  const [images, setImages] = useState<string[]>([]);
   const [index, setIndex] = useState<number | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const imagesPerPage = 9; // how many images per page
+  const imagesPerPage = 9;
   const totalPages = Math.ceil(images.length / imagesPerPage);
-
   const startIndex = (currentPage - 1) * imagesPerPage;
   const currentImages = images.slice(startIndex, startIndex + imagesPerPage);
+
+  useEffect(() => {
+    async function fetchImages() {
+      const res = await fetch("/data/gallery.json");
+      const data = await res.json();
+      setImages(data);
+    }
+    fetchImages();
+  }, []);
+  console.log(images);
 
   return (
     <section className="py-16 px-6">
