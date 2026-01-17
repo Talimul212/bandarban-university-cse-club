@@ -5,9 +5,36 @@ import { GalleryThumbnails } from "lucide-react";
 import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-
+const images = [
+  "/gallery/1.jpg",
+  "/gallery/2.jpg",
+  "/gallery/3.jpg",
+  "/gallery/4.jpg",
+  "/gallery/5.jpg",
+  "/gallery/6.jpg",
+  "/gallery/7.jpg",
+  "/gallery/8.jpg",
+  "/gallery/9.jpg",
+  "/gallery/10.jpg",
+  "/gallery/11.jpg",
+  "/gallery/12.jpg",
+  "/gallery/13.jpg",
+  "/gallery/14.jpg",
+  "/gallery/15.jpg",
+  "/gallery/16.jpg",
+  "/gallery/17.jpg",
+  "/gallery/18.jpg",
+  "/gallery/19.jpg",
+  "/gallery/20.jpg",
+  "/gallery/21.jpg",
+  "/gallery/22.jpg",
+  "/gallery/23.jpg",
+  "/gallery/24.jpg",
+  "/gallery/25.jpg",
+  "/gallery/26.jpg",
+];
 export default function GallerySection() {
-  const [images, setImages] = useState<string[]>([]);
+  // const [images, setImages] = useState<string[]>([]);
   const [index, setIndex] = useState<number | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -16,15 +43,15 @@ export default function GallerySection() {
   const startIndex = (currentPage - 1) * imagesPerPage;
   const currentImages = images.slice(startIndex, startIndex + imagesPerPage);
 
-  useEffect(() => {
-    async function fetchImages() {
-      const res = await fetch("/data/gallery.json");
-      const data = await res.json();
-      setImages(data);
-    }
-    fetchImages();
-  }, []);
-  console.log(images);
+  // useEffect(() => {
+  //   async function fetchImages() {
+  //     const res = await fetch("/data/gallery.json");
+  //     const data = await res.json();
+  //     setImages(data);
+  //   }
+  //   fetchImages();
+  // }, []);
+  // console.log(images);
 
   return (
     <section className="py-16 px-6">
