@@ -38,7 +38,7 @@ export default function Page() {
     <div className="w-full text-[#028237] px-6 py-16">
       {/* Badge */}
       <div className="flex justify-center mb-4">
-        <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#028237]/20 text-[#028237] font-semibold text-sm shadow-md">
+        <div className="flex items-center border border-amber-50 gap-2 px-4 py-2 rounded-full bg-[#028237]/20 text-[#028237] font-semibold text-sm shadow-md">
           <Star className="w-4 h-4" />
           Journey Through Innovation
         </div>

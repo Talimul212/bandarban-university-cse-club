@@ -36,12 +36,12 @@ const courses: Course[] = [
 
 export default function CoursesPage() {
   return (
-    <section className="bg-linear-to-b from-green-200 to-green-100 py-24 px-6">
+    <section className="py-16 px-6">
       <div className="mx-auto max-w-7xl">
         {/* Top Button */}
         <div>
           <div className="flex justify-center mb-6">
-            <button className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#09c558] text-[#09c558] font-semibold hover:bg-[#09c558]/10 transition">
+            <button className="flex items-center gap-2 md:w-[20%]  justify-center px-4 py-2 rounded-full bg-[#028237]/20 text-[#028237] font-semibold text-sm shadow-md border border-amber-50">
               <CreativeCommons className="w-4 h-4" />
               Running Courses
             </button>

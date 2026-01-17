@@ -92,7 +92,7 @@ export default function Page() {
       {/* Top Button */}
 
       <div className="flex justify-center mb-4">
-        <div className="flex items-center gap-2 md:w-[20%]  justify-center px-4 py-2 rounded-full bg-[#028237]/20 text-[#028237] font-semibold text-sm shadow-md">
+        <div className="flex items-center gap-2 md:w-[20%]  justify-center px-4 py-2 rounded-full bg-[#028237]/20 text-[#028237] font-semibold text-sm shadow-md border border-amber-50">
           <CalendarDays className="w-4 h-4" />
           Event Gallery
         </div>
