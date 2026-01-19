@@ -87,8 +87,8 @@ function ExecutiveMember() {
               onClick={() => showSlide(i)}
               className={`flex items-center md:h-20 cursor-pointer md:px-4 md:py-2 px-1 py-2 rounded ${
                 currentSlide === i
-                  ? "bg-[#E3F9E7]/20  text-[#09c558] border border-green-700 font-semibold"
-                  : "bg-gray-100 text-gray-600 "
+                  ? "bg-[#E3F9E7] shadow-xl text-[#09c558] border border-gray-50 font-semibold"
+                  : "bg-gray-50 text-gray-600 "
               }`}
             >
               <h2 className="text-xs md:text-xl uppercase font-bold text-[#028237] text-center">
