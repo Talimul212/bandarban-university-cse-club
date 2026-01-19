@@ -13,7 +13,7 @@ export default function PartnersSection() {
     {
       name: "YUNet",
       logo: "/images/logo.png",
-      link: "https://yunet.org/",
+      link: "https://yunet.asia/",
     },
     {
       name: "ICT Olympiad Bangladesh",
@@ -25,16 +25,22 @@ export default function PartnersSection() {
       logo: "/images/668b673940a1fBasis_logo.jpeg",
       link: "https://basis.org.bd/",
     },
+    {
+      name: "বান্দরবান জেলা পরিষদ",
+      logo: "/images/বান্দরবান_জেলা_পরিষদ.png",
+      link: "https://bhdc.gov.bd/",
+    },
   ];
 
   return (
-    <section className="py-16 px-6 bg-gray-50">
+    <section className="py-20 px-6 bg-gray-50">
       <div className="flex justify-center mb-6">
         <button className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#09c558] text-[#09c558] font-semibold hover:bg-[#09c558]/10 transition">
           <Handshake className="w-4 h-4" />
           Our Partners
         </button>
       </div>
+
       <div className="mx-auto max-w-6xl text-center">
         {/* Title */}
         <h2 className="text-3xl md:text-5xl font-extrabold mb-6 text-blacK">
@@ -52,7 +58,7 @@ export default function PartnersSection() {
         </p>
 
         {/* Logos Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
           {partners.map((partner) => (
             <a
               key={partner.name}
@@ -69,9 +75,6 @@ export default function PartnersSection() {
                   className="object-contain"
                 />
               </div>
-              <span className="text-sm font-semibold text-gray-700">
-                {partner.name}
-              </span>
             </a>
           ))}
         </div>
