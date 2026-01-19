@@ -26,7 +26,7 @@ function ExecutiveMember() {
       session: "Autumn-2023",
       role: "General Secretary",
       message: "Empowering students through technology and collaboration.",
-      photoURL: "https://i.ibb.co.com/xtg9nNS7/durjoy.jpg",
+      photoURL: "https://i.ibb.co.com/DDvFS8v9/durjoy.jpg",
       socials: {
         linkedin: "https://www.linkedin.com/in/durjoy-barua-2615b2345/",
         github: "/",

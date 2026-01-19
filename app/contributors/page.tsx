@@ -38,7 +38,7 @@ export default function Page() {
       session: "Autumn-2023",
       role: "Software Developer",
 
-      image: "https://i.ibb.co.com/xtg9nNS7/durjoy.jpg",
+      image: "https://i.ibb.co.com/DDvFS8v9/durjoy.jpg",
       socials: {
         linkedin: "https://www.linkedin.com/in/durjoy-barua-2615b2345/",
         github: "/contributors",
