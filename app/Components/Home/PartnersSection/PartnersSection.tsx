@@ -37,9 +37,15 @@ export default function PartnersSection() {
       </div>
       <div className="mx-auto max-w-6xl text-center">
         {/* Title */}
-        <h2 className="text-3xl md:text-5xl font-extrabold mb-6 text-[#028237]">
+        <h2 className="text-3xl md:text-5xl font-extrabold mb-6 text-blacK">
           Our Partners, Events & Sponsors
         </h2>
+        {/* Gradient Lines */}
+        <div className="flex justify-center gap-2 mb-10">
+          <div className="h-1 w-16 rounded-full bg-linear-to-r from-white to-[#028237]" />
+          <div className="h-1 w-24 rounded-full bg-[#028237]" />
+          <div className="h-1 w-16 rounded-full bg-linear-to-r from-[#028237] to-white" />
+        </div>
         <p className="text-gray-600 max-w-2xl mx-auto mb-12">
           We are proud to collaborate with leading organizations and events that
           empower innovation and technology in Bangladesh.
