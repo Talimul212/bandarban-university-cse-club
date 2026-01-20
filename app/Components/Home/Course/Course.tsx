@@ -67,7 +67,7 @@ export default function OurCourses() {
               <p className="mb-6 text-gray-600">{course.description}</p>
 
               <a
-                href={`/courses/${course.id}`}
+                href={`/courses`}
                 className="font-medium text-[#09c558] hover:gap-3 transition-all flex justify-between items-center"
               >
                 <span>Learn more</span>{" "}
