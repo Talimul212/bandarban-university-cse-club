@@ -29,7 +29,7 @@ const courses = [
 
 export default function OurCourses() {
   return (
-    <section className=" bg-linear-to-r from-[#DDF5E7] to-[#DDF5E7]/50 py-16 mt-12 px-6">
+    <section className=" bg-linear-to-r from-[#DDF5E7] to-[#DDF5E7]/50 py-16 px-6">
       <div className="w-[95%] mx-auto">
         {/* Header */}
         <div data-aos="fade-up" className="mb-12 text-center text-[#09c558]">
