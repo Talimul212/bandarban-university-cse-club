@@ -14,7 +14,7 @@ const images = [
 
 export default function OurCommunity() {
   return (
-    <section className="py-20 md:px-8 w-[96%] mx-auto px-4">
+    <section className="py-20 md:px-8 w-[95%] mx-auto px-4">
       {/* Top Button */}
       <div data-aos="fade-down">
         <div className="flex justify-center mb-6">
