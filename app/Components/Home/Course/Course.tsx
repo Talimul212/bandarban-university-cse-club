@@ -54,7 +54,7 @@ export default function OurCourses() {
           {courses.map((course) => (
             <div
               key={course.id}
-              className="rounded-2xl bg-white p-6 shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
+              className="rounded-xl border-b-2 hover:border-yellow-500 border-green-300 bg-white p-6 shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#09c558]/10 text-2xl">
                 {course.icon}
