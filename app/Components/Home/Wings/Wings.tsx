@@ -1,9 +1,8 @@
+"use client";
 import {
   ArrowRight,
   BookDown,
-  Box,
   Code,
-  DatabaseZap,
   FolderCode,
   Smartphone,
 } from "lucide-react";
@@ -14,26 +13,26 @@ const courses = [
     title: "Competitive Programming",
     description:
       "Sharpen problem-solving skills with algorithms, data structures, and contests.",
-    icon: <Code />, // icon for coding/CP
+    icon: <Code />,
   },
   {
     id: 2,
     title: "Web Development",
     description:
       "Learn modern web development with real-world projects and frameworks.",
-    icon: <FolderCode />, // icon for web dev
+    icon: <FolderCode />,
   },
   {
     id: 3,
     title: "Mobile Application",
     description: "Build Android and iOS apps with modern tools and frameworks.",
-    icon: <Smartphone />, // icon for mobile apps
+    icon: <Smartphone />,
   },
 ];
 
 export default function Wings() {
   return (
-    <section className=" bg-linear-to-r from-[#DDF5E7] to-[#DDF5E7]/50 py-16 px-6">
+    <section className="bg-linear-to-r from-[#DDF5E7] to-[#DDF5E7]/50 py-16 px-6">
       <div className="w-[95%] mx-auto">
         {/* Header */}
         <div data-aos="fade-up" className="mb-12 text-center text-[#09c558]">
@@ -41,12 +40,13 @@ export default function Wings() {
           <div className="flex justify-center mb-6">
             <button className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#09c558] text-[#09c558] font-semibold hover:bg-[#09c558]/10 transition">
               <BookDown className="w-4 h-4" />
-              Our Course
+              Club Wings
             </button>
           </div>
-          <p className="mx-auto max-w-2xl">
-            Industry-focused courses designed to build real skills, not just
-            theory.
+          <p className="mx-auto max-w-2xl text-gray-700">
+            All courses listed below are offered under the specialized wings of
+            BU CSE Club. Each wing focuses on empowering students with
+            industry-relevant skills through hands-on learning and mentorship.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export default function Wings() {
                 href={`/wings`}
                 className="font-medium text-[#09c558] hover:gap-3 transition-all flex justify-between items-center"
               >
-                <span>Learn more</span>{" "}
+                <span>Learn more</span>
                 <span>
                   <ArrowRight size={18} />
                 </span>
@@ -87,10 +87,9 @@ export default function Wings() {
         <div className="mt-14 text-center">
           <a
             href="/wings"
-            className="inline-block rounded-full bg-white px-8 py-2 font-semibold text-[#09c558] shadow-md transition  duration-500
-            hover:text-amber-50 hover:bg-green-500"
+            className="inline-block rounded-full bg-white px-8 py-2 font-semibold text-[#09c558] shadow-md transition duration-500 hover:text-amber-50 hover:bg-green-500"
           >
-            See all courses
+            See all Wings
           </a>
         </div>
       </div>

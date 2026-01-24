@@ -72,11 +72,11 @@ export default function HistorySection() {
           <div className="grid grid-cols-2 justify-center items-center gap-3">
             {/* Top Left: App UI */}
             <Image
-              src="/images/app_ui_1.png"
+              src="/images/4.jpg"
               alt="App UI 1"
-              width={80}
-              height={80}
-              className="rounded-xl shadow-md w-full h-57.5 object--cover"
+              width={200}
+              height={230}
+              className="rounded-xl shadow-md w-full h-57.5 object-cover"
             />
             {/* Top Right: Innovation Tile */}
             <div className="bg-[#dafbe7] hover:scale-115 duration-500 text-[#028237] rounded-xl flex items-center justify-center h-40 w-full font-bold text-lg">
@@ -96,11 +96,11 @@ export default function HistorySection() {
 
             {/* Bottom Right: App UI */}
             <Image
-              src="/images/app_ui_2.png"
+              src="/images/4.jpg"
               alt="App UI 2"
-              width={100}
-              height={100}
-              className="rounded-xl -mt-7.5 shadow-md w-full h-57.5  object--contain"
+              width={200}
+              height={230}
+              className="rounded-xl -mt-7.5 shadow-md w-full h-57.5 object-cover"
             />
           </div>
         </div>
