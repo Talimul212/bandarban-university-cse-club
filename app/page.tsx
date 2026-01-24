@@ -1,10 +1,10 @@
-import OurCourses from "./Components/Home/Course/Course";
 import HeroSlider from "./Components/Home/HeroSlider/HeroSlider";
 import { slideData } from "./Components/Home/HeroSlider/SlidesData";
 import HistorySection from "./Components/Home/HistorySection/HistorySection";
 import OurCommunity from "./Components/Home/OurCommunity/OurCommunity";
 import PartnersSection from "./Components/Home/PartnersSection/PartnersSection";
 import ExecutiveMember from "./Components/Home/Team/ExecutiveMember";
+import Wings from "./Components/Home/Wings/Wings";
 // import OurTeam from "./Components/Home/Team/Team";
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
       <HistorySection />
       <OurCommunity />
       <PartnersSection />
-      <OurCourses />
+      <Wings />
       <ExecutiveMember />
       {/* <OurTeam /> */}
     </div>

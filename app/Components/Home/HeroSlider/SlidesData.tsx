@@ -23,7 +23,7 @@ export const slideData = [
   },
   {
     id: "3",
-    image: "/images/webdesign.jpg",
+    image: "/images/11-banner-7193.jpeg",
     title: "Learn. Build. Share.",
     subtitle: "Grow your skills with real projects",
     buttonText: "View Events",

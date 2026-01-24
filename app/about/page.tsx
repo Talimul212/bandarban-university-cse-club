@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Star, CalendarDays } from "lucide-react";
+import All_Executives from "./components/All_Executives";
 
 const timelineEvents = [
   {
@@ -35,9 +36,9 @@ const timelineEvents = [
 
 export default function Page() {
   return (
-    <div className="w-full text-[#028237] px-6 py-16">
+    <div className="w-full text-[#028237]  py-16">
       {/* Badge */}
-      <div className="flex justify-center mb-4">
+      <div className=" flex justify-center mb-4">
         <div className="flex items-center border border-amber-50 gap-2 px-4 py-2 rounded-full bg-[#028237]/20 text-[#028237] font-semibold text-sm shadow-md">
           <Star className="w-4 h-4" />
           Journey Through Innovation
@@ -45,19 +46,19 @@ export default function Page() {
       </div>
 
       {/* Title */}
-      <h1 className="text-center text-3xl md:text-5xl text-[#028237] font-extrabold mb-4">
+      <h1 className="px-6 text-center text-3xl md:text-5xl text-[#028237] font-extrabold mb-4">
         The Story of <span className="text-[#ff6900]">BU CSE Club</span>
       </h1>
 
       {/* Subtitle */}
-      <p className="text-center text-base md:text-lg text-black/80 max-w-3xl mx-auto leading-relaxed mb-16">
+      <p className="px-6 text-center text-base md:text-lg text-black/80 max-w-3xl mx-auto leading-relaxed mb-16">
         From its foundation in 2022 to leading university-wide tech festivals,
         BU CSE Club has grown into a powerhouse of innovation, collaboration,
         and student-led excellence.
       </p>
 
       {/* Timeline */}
-      <div className="relative max-w-5xl mx-auto">
+      <div className="px-6 mb-14 relative max-w-5xl mx-auto">
         {/* Vertical Line */}
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-[#028237]/40" />
 
@@ -80,7 +81,7 @@ export default function Page() {
                 {/* Content */}
                 {isLeft ? (
                   <>
-                    <div className="md:w-1/2 md:pr-8 md:h-[50vh] text-right md:text-left">
+                    <div className="md:w-1/2 md:pr-8 md:h-[30vh] text-right md:text-left">
                       <div
                         className="relative bg-white rounded-xl p-6 shadow-md"
                         style={{ border: `2px solid ${event.borderColor}` }}
@@ -98,7 +99,7 @@ export default function Page() {
                   </>
                 ) : (
                   <>
-                    <div className="hidden md:block w-1/2 md:h-[50vh] " />
+                    <div className="hidden md:block w-1/2 md:h-[30vh] " />
                     <div className="md:w-1/2 md:pl-8 text-left">
                       <div
                         className="relative bg-white rounded-xl p-6 shadow-md"
@@ -120,6 +121,7 @@ export default function Page() {
           })}
         </div>
       </div>
+      <All_Executives />
     </div>
   );
 }

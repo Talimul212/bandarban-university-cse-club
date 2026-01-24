@@ -34,7 +34,7 @@ const courses: Course[] = [
   },
 ];
 
-export default function CoursesPage() {
+export default function wingsPage() {
   return (
     <section className="py-16 px-6">
       <div className="mx-auto max-w-7xl">

@@ -23,7 +23,7 @@ const navLinks = [
   { name: "Home", href: "/", icon: <Home size={18} /> },
   { name: "About", href: "/about", icon: <Info size={18} /> },
   { name: "Events", href: "/events", icon: <CalendarDays size={18} /> },
-  { name: "Courses", href: "/courses", icon: <BookOpen size={18} /> },
+  { name: "Wings", href: "/wings", icon: <BookOpen size={18} /> },
   { name: "Gallery", href: "/gallery", icon: <Images size={18} /> },
   { name: "Contributors", href: "/contributors", icon: <Mail size={18} /> },
 ];
@@ -65,8 +65,10 @@ export default function Navbar() {
             <li key={link.name}>
               <Link
                 href={link.href}
-                className={`hover:text-[#195734] text-sm uppercase text-[#028237] ${
-                  pathname === link.href ? "font-bold" : ""
+                className={`hover:text-[#195734] text-sm uppercase text-[#195734] ${
+                  pathname === link.href
+                    ? "font-bold border-b-2 p-2 border-amber-50"
+                    : ""
                 }`}
               >
                 {link.name}

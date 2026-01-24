@@ -2,32 +2,36 @@ import {
   ArrowRight,
   BookDown,
   Box,
+  Code,
   DatabaseZap,
   FolderCode,
+  Smartphone,
 } from "lucide-react";
 
 const courses = [
   {
     id: 1,
-    title: "Web Development",
-    description: "Learn modern web development with real-world projects.",
-    icon: <FolderCode />,
+    title: "Competitive Programming",
+    description:
+      "Sharpen problem-solving skills with algorithms, data structures, and contests.",
+    icon: <Code />, // icon for coding/CP
   },
   {
     id: 2,
-    title: "Data Structures",
-    description: "Master core DSA concepts for interviews and problem solving.",
-    icon: <DatabaseZap />,
+    title: "Web Development",
+    description:
+      "Learn modern web development with real-world projects and frameworks.",
+    icon: <FolderCode />, // icon for web dev
   },
   {
     id: 3,
-    title: "DevOps Basics",
-    description: "CI/CD, Docker, and cloud fundamentals for developers.",
-    icon: <Box />,
+    title: "Mobile Application",
+    description: "Build Android and iOS apps with modern tools and frameworks.",
+    icon: <Smartphone />, // icon for mobile apps
   },
 ];
 
-export default function OurCourses() {
+export default function Wings() {
   return (
     <section className=" bg-linear-to-r from-[#DDF5E7] to-[#DDF5E7]/50 py-16 px-6">
       <div className="w-[95%] mx-auto">
@@ -67,7 +71,7 @@ export default function OurCourses() {
               <p className="mb-6 text-gray-600">{course.description}</p>
 
               <a
-                href={`/courses`}
+                href={`/wings`}
                 className="font-medium text-[#09c558] hover:gap-3 transition-all flex justify-between items-center"
               >
                 <span>Learn more</span>{" "}
@@ -82,8 +86,9 @@ export default function OurCourses() {
         {/* See More */}
         <div className="mt-14 text-center">
           <a
-            href="/courses"
-            className="inline-block rounded-full bg-white px-8 py-3 font-semibold text-[#09c558] shadow-md transition hover:bg-gray-100"
+            href="/wings"
+            className="inline-block rounded-full bg-white px-8 py-2 font-semibold text-[#09c558] shadow-md transition  duration-500
+            hover:text-amber-50 hover:bg-green-500"
           >
             See all courses
           </a>
