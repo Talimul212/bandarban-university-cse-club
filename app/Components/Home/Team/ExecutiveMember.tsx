@@ -159,7 +159,7 @@ function ExecutiveMember() {
                       rel="noopener noreferrer"
                       className="text-blue-600 hover:text-[#09c558]"
                     >
-                      <FaFacebook className="w-8 h-8 rounded rounded" />
+                      <FaFacebook className="w-8 h-8 rounded" />
                     </a>
                   )}
                 </div>
@@ -167,6 +167,17 @@ function ExecutiveMember() {
             </div>
           </div>
         )}
+      </div>
+      {/* See More */}
+      <div className="mt-4 mb-10 border border-amber-50 text-center">
+        <a
+          href="/about"
+          className="inline-block rounded-full bg-white px-8 py-2 font-semibold text-[#09c558] shadow-md transition 
+          duration-500
+            hover:text-amber-50 hover:bg-green-500"
+        >
+          Executive Body
+        </a>
       </div>
     </div>
   );
