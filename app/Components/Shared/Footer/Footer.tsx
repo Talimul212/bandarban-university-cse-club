@@ -74,7 +74,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <ChevronRight size={16} className="text-[#f5c542]" />
-              <Link href="/courses" className="hover:text-[#f5c542]">
+              <Link href="/wings" className="hover:text-[#f5c542]">
                 Courses
               </Link>
             </li>
@@ -86,7 +86,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <ChevronRight size={16} className="text-[#f5c542]" />
-              <Link href="/team" className="hover:text-[#f5c542]">
+              <Link href="/about" className="hover:text-[#f5c542]">
                 Our Team
               </Link>
             </li>
@@ -166,7 +166,7 @@ export default function Footer() {
 
           <Link
             href="/join"
-            className="bg-linear-to-r  from-[#ff6900] to-[#ffaa00] text-white px-4 py-2 rounded-full  font-semibold flex justify-center items-center gap-2 uppercase border border-amber-50 hover:from-[#ffaa00] hover:to-[#ff6900] transition"
+            className="bg-linear-to-r  from-[#ff6900] to-[#ffaa00] text-white px-4 py-2 rounded-md  font-semibold flex justify-center items-center gap-2 uppercase border border-amber-50 hover:from-[#ffaa00] hover:to-[#ff6900] transition"
           >
             <User2 /> Become a Member
           </Link>

@@ -169,10 +169,10 @@ function ExecutiveMember() {
         )}
       </div>
       {/* See More */}
-      <div className="mt-4 mb-10 border border-amber-50 text-center">
+      <div className="mt-4 mb-10  text-center">
         <a
           href="/about"
-          className="inline-block rounded-full bg-white px-8 py-2 font-semibold text-[#09c558] shadow-md transition 
+          className="inline-block rounded-md border border-green-100 bg-white px-8 py-2 font-semibold text-[#09c558] shadow-md transition 
           duration-500
             hover:text-amber-50 hover:bg-green-500"
         >

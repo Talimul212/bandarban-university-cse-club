@@ -80,7 +80,7 @@ export default function Navbar() {
         {/* Join Button */}
         <Link
           href="/member/register"
-          className="hidden md:flex bg-linear-to-r from-[#ff6900] to-[#ffaa00] text-white px-4 py-2 rounded-full font-semibold items-center gap-2 uppercase border border-amber-50 hover:from-[#ffaa00] hover:to-[#ff6900] transition"
+          className="hidden md:flex bg-linear-to-r from-[#ff6900] to-[#ffaa00] text-white px-4 py-2 rounded-md font-semibold items-center gap-2 uppercase border border-amber-50 hover:from-[#ffaa00] hover:to-[#ff6900] transition"
         >
           <User2 /> Get Involved
         </Link>
@@ -147,7 +147,7 @@ export default function Navbar() {
         <div className="px-6 mt-4 mb-10">
           <Link
             href="/member/register"
-            className="bg-linear-to-r from-[#ff6900] to-[#ffaa00] text-white px-4 py-2 rounded-full font-semibold flex items-center gap-2 uppercase border border-amber-50 hover:from-[#ffaa00] hover:to-[#ff6900] transition"
+            className="bg-linear-to-r from-[#ff6900] to-[#ffaa00] text-white px-4 py-2 rounded-md font-semibold flex items-center gap-2 uppercase border border-amber-50 hover:from-[#ffaa00] hover:to-[#ff6900] transition"
             onClick={() => setDrawerOpen(false)}
           >
             <User2 />
