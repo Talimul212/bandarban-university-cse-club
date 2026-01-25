@@ -5,9 +5,13 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import { Boxes, CalendarDays, MapPin } from "lucide-react";
 import { events } from "../data/eventData";
-
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import { useState } from "react";
 export default function Page() {
   const params = useParams();
+  const [openLightbox, setOpenLightbox] = useState(false);
+
   const eventId = Number(params.id);
   const event = events.find((e) => e.id === eventId);
 
@@ -48,29 +52,49 @@ export default function Page() {
       </div>
 
       {/* Event Details Section */}
-      <div className="max-w-6xl mx-5 border rounded-xl my-10 md:mx-auto shadow px-6 py-8">
-        {/* Title */}
-        <h2 className="text-xl md:text-3xl font-extrabold mb-6">
-          About This Event
-        </h2>
+      <div className="max-w-6xl mx-5 my-10 md:mx-auto flex flex-col md:flex-row gap-5  overflow-hidden">
+        {/* Left: About Text */}
+        <div className="md:flex-1 border rounded-xl shadow  bg-white p-6 md:flex md:flex-col justify-between">
+          <h2 className="text-xl md:text-3xl font-extrabold mb-6">
+            About This Event
+          </h2>
 
-        {/* Description */}
-        <p className="text-black/80 leading-relaxed mb-6">
-          {event.description}
-        </p>
+          <p className="text-black/80 leading-relaxed mb-6">
+            {event.description}
+          </p>
 
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2">
-          {event.tags.map((tag, i) => (
-            <span
-              key={i}
-              className="bg-green-100 text-green-600 px-3 py-1 font-semibold rounded-md text-xs"
-            >
-              {tag}
-            </span>
-          ))}
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 mt-auto">
+            {event.tags.map((tag, i) => (
+              <span
+                key={i}
+                className="bg-green-100 text-green-600 px-3 py-1 font-semibold rounded-md text-xs"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Right: Image with Lightbox Trigger */}
+        <div
+          className="md:flex-1 relative cursor-pointer md:overflow-hidden  border rounded-xl shadow  group"
+          onClick={() => setOpenLightbox(true)}
+        >
+          <Image
+            src={event.image}
+            alt={event.title}
+            fill
+            className="object-cover transition duration-500 ease-in-out group-hover:blur-sm"
+          />
+
+          {/* Hover Overlay Text */}
+          <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300">
+            <p className="text-white font-semibold text-lg">Click to preview</p>
+          </div>
         </div>
       </div>
+
       {/* Event Details Section */}
       <div className="max-w-6xl md:mx-auto mx-5 border rounded-xl shadow px-6 py-8">
         {/* Title */}
@@ -138,6 +162,15 @@ export default function Page() {
           </div>
         </div>
       </div>
+      <Lightbox
+        open={openLightbox}
+        close={() => setOpenLightbox(false)}
+        slides={[{ src: event.image }]}
+        render={{
+          buttonPrev: () => null,
+          buttonNext: () => null,
+        }}
+      />
 
       {/* Registration Status Section */}
       <div className="max-w-6xl mx-5 mt-10 flex flex-col justify-center items-center md:mx-auto bg-linear-to-r from-[#028237] to-green-200 text-white rounded-xl shadow-lg p-6 md:p-8 mb-10">
