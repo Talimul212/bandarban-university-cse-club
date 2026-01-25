@@ -79,7 +79,7 @@ export default function HistorySection() {
               className="rounded-xl shadow-md w-full h-57.5 object-cover"
             />
             {/* Top Right: Innovation Tile */}
-            <div className="bg-[#dafbe7] hover:scale-115 duration-500 text-[#028237] rounded-xl flex items-center justify-center h-40 w-full font-bold text-lg">
+            <div className="bg-[#dafbe7] hover:scale-105 transition duration-500 text-[#028237] rounded-xl flex items-center justify-center h-40 w-full font-bold text-lg hover:text-green-600 drop-shadow-[0_0_10px_#16a34a]">
               <span className="flex items-center gap-2">
                 <Star className="w-6 h-6" />
                 Innovation
@@ -87,7 +87,7 @@ export default function HistorySection() {
             </div>
 
             {/* Bottom Left: Excellence Tile */}
-            <div className="bg-[#028237] -mt-7.5 hover:scale-115 duration-500 text-white rounded-xl flex items-center justify-center h-40 w-full font-bold text-lg">
+            <div className="bg-[#16a34a] -mt-7.5 hover:scale-105 transition duration-500 text-[#dafbe7] rounded-xl flex items-center justify-center h-40 w-full font-bold text-lg drop-shadow-[0_0_10px_#dafbe7]">
               <span className="flex items-center gap-2">
                 <Award className="w-6 h-6" />
                 Excellence
@@ -142,8 +142,8 @@ export default function HistorySection() {
           <div className="mt-0   flex flex-col md:flex-row gap-4 justify-center items-center">
             {/* CTA 2: View Courses */}
             <a
-              href="/courses"
-              className="flex w-full items-center justify-center gap-2 px-6 py-3 rounded-full border border-[#028237] text-[#028237] font-semibold text-sm shadow-md hover:bg-[#028237]/10 transition"
+              href="/wings"
+              className="flex w-full items-center justify-center gap-2 px-6 py-3 rounded-md border border-[#028237] text-[#028237] font-semibold text-sm shadow-md hover:bg-[#028237]/10 transition"
             >
               <BookOpen className="w-4 h-4" />
               View Courses
@@ -153,7 +153,7 @@ export default function HistorySection() {
             {/* CTA 1: Learn More About Us */}
             <a
               href="/about"
-              className="flex w-full items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#028237] text-white font-semibold text-sm shadow-md hover:bg-[#02662c] transition"
+              className="flex w-full items-center justify-center gap-2 px-6 py-3 rounded-md bg-[#028237] text-white font-semibold text-sm shadow-md hover:bg-[#02662c] transition"
             >
               Learn More About Us
               <ArrowRight className="w-4 h-4" />

@@ -17,7 +17,7 @@ export const slideData = [
     title: "Welcome to Our Community",
     subtitle: "Building technology together",
     buttonText: "Join Us",
-    buttonLink: "//member/register",
+    buttonLink: "/member/register",
     // quota: "BU CSE Club — Where ideas become innovation",
     // icon: Users, // community icon
   },
@@ -33,7 +33,7 @@ export const slideData = [
   },
   {
     id: "4",
-    image: "/images/analysis.jpg",
+    image: "/images/14.jpg",
     title: "Analys Data Effectively and Efficeintly",
     subtitle: "Get insights with our platform and tools.",
     buttonText: "Get Started",
