@@ -6,6 +6,7 @@ import Footer from "./Components/Shared/Footer/Footer";
 import "aos/dist/aos.css";
 import AOSProvider from "./Components/AOSProvider";
 import BackToTop from "./Components/BackToTop";
+import PageWrapper from "@/components/PageWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +38,9 @@ export default function RootLayout({
       >
         <AOSProvider />
         <Navbar />
-        <main className="min-h-screen">{children}</main>
+        <PageWrapper>
+          <main className="min-h-screen">{children}</main>
+        </PageWrapper>
         <BackToTop />
         <Footer />
       </body>
