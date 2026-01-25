@@ -1,80 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
-/*
-"use client";
-import React, { useState } from "react";
-import { CalendarDays } from "lucide-react";
-import EventCard from "../Components/Cards/EventCard";
-import { events } from "./data/eventData";
-
-const tabs = ["All Events", "Workshops", "Seminars", "Competitions"];
-
-export default function Page() {
-  const [activeTab, setActiveTab] = useState("All Events");
-
-  const filteredEvents =
-    activeTab === "All Events"
-      ? events
-      : events.filter((event) => event.type === activeTab);
-
-  return (
-    <div className="md:w-[95%]  mx-auto ms:px-6 px-5 py-16  text-[#028237]">
-
-      <div className="flex justify-center mb-4">
-        <div className="flex items-center gap-2 md:w-[20%]  justify-center px-4 py-2 rounded-full bg-[#028237]/20 text-[#028237] font-semibold text-sm shadow-md border border-amber-50">
-          <CalendarDays className="w-4 h-4" />
-          Event Gallery
-        </div>
-      </div>
-
-      <h2 className="text-center text-3xl md:text-5xl font-extrabold mb-4">
-        Our <span className="text-[#ff6900]">Events</span>
-      </h2>
-
-
-      <p className="text-center text-base md:text-lg text-black/80 max-w-3xl mx-auto leading-relaxed mb-10">
-        Explore our past workshops, seminars, hackathons, and more. See what
-        we've accomplished together as a tech community.
-      </p>
-
-
-      <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
-
-        <div className="flex flex-wrap gap-3">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition ${
-                activeTab === tab
-                  ? "bg-[#028237] text-white shadow-md"
-                  : "bg-white border border-[#028237] text-[#028237] hover:bg-[#028237]/10"
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
-
-
-        <div className="text-sm text-gray-700">
-          Sort by:{" "}
-          <select className="ml-2 px-3 py-1 rounded-md border border-gray-300 text-sm">
-            <option>Newest First</option>
-            <option>Oldest First</option>
-            <option>Most Popular</option>
-          </select>
-        </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {filteredEvents.map((event) => (
-          <EventCard key={event.id} {...event} id={String(event.id)} />
-        ))}
-      </div>
-    </div>
-  );
-}
-  */
-
 "use client";
 import { useState, useMemo } from "react";
 import { events } from "./data/eventData";
@@ -121,7 +44,7 @@ export default function EventsPage() {
     <div className="max-w-7xl mx-auto px-4 py-12">
       <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
         <div>
-          <h1 className="text-left text-3xl md:text-5xl text-[#028237] font-extrabold mb-4">
+          <h1 className="text-left text-2xl md:text-3xl text-[#028237] font-extrabold mb-4">
             CSE Club <span className="text-[#ff6900]">Activities</span>
           </h1>
           <p className="text-gray-500">
@@ -141,7 +64,7 @@ export default function EventsPage() {
           </select>
         </div>
       </div>
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-3 mb-5">
         {categories.map((cat) => (
           <button
             key={cat}
