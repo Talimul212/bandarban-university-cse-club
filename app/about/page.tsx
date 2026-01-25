@@ -5,31 +5,51 @@ import All_Executives from "./components/All_Executives";
 
 const timelineEvents = [
   {
-    year: "2022",
-    title: "Foundation",
+    id: 1,
+    year: "2020",
+    title: "Foundation of BU CSE Club",
     description:
-      "Foundation of BU CSE Club — established to unite tech enthusiasts and empower students through coding, design, and innovation.",
-    borderColor: "#dafbe7", // highlight first card
+      "BU CSE Club was established in 2020 with a vision to ignite curiosity, collaboration, and innovation among tech-driven students. Since then, it has evolved into a dynamic platform for aspiring developers, designers, and thinkers to explore computer science through workshops, seminars, hackathons, and community events.",
+    borderColor: "#dafbe7",
   },
   {
+    id: 2,
     year: "2023",
-    title: "Early Growth & Recognition",
+    title: "National Achievement: BDapps Hackathon",
     description:
-      "Hosted workshops, contests, and launched the BU CSE Club website and Bus Tracking App.",
+      "Team 'The Sangu' from BU CSE Club achieved 🥉 2nd Runner-Up in the BDapps National Hackathon 2023, organized by ICT Division & Robi Axiata. Their project, a CHT-based Tourism Android App, showcased innovation and problem-solving skills on a national stage.",
     borderColor: "#dafbe7",
   },
   {
-    year: "2024",
-    title: "Expansion & Collaboration",
-    description:
-      "Partnered with other clubs, organized inter-university tech events, and grew the development committee.",
-    borderColor: "#dafbe7",
-  },
-  {
+    id: 3,
     year: "2025",
-    title: "Leading with Innovation",
+    title: "Cybersecurity Awareness Seminars",
     description:
-      "Launched new platforms, contributed to open-source, and became a recognized tech force at BU.",
+      "In January 2025, BU CSE Club organized two seminars on Cybersecurity Awareness & IT Career. Held at Bandarban Govt. Women College and Bandarban Govt. College, the sessions were presented by BDapps, sponsored by Success Academic & Admission Care, and guided students toward safe internet practices and IT career opportunities.",
+    borderColor: "#dafbe7",
+  },
+  {
+    id: 4,
+    year: "2025",
+    title: "CSE Fest & Strategic Collaboration",
+    description:
+      "CSE Fest 2025 (25–27 Jan) was a three-day celebration of creativity and collaboration at BU. Events included a Programming Contest, Information Olympiad, Gaming Contest, Photo Exhibition, and Project Showcase. On 27 Jan, BU CSE Club also signed an MoU with Youth Upskill Network (YUNet) during the 'Safe Internet for Career Empowerment' session.",
+    borderColor: "#dafbe7",
+  },
+  {
+    id: 5,
+    year: "2025",
+    title: "Industry Collaboration & Inspiration",
+    description:
+      "On 15 May 2025, BU CSE Club hosted the BDApps Innovation Summit Roadshow, inspiring students in app development. Later, the Programming Hero Campus Session featured Dr. M. Zahirul Hoque, Mr. Abdur Rakib (COO, Programming Hero), BU Faculty, and Club Leaders, motivating students with insights on coding, teamwork, and innovation.",
+    borderColor: "#dafbe7",
+  },
+  {
+    id: 6,
+    year: "2026",
+    title: "Official Website Launch",
+    description:
+      "In 2026, BU CSE Club launched its official website, creating a central hub for events, archives, leadership records, and resources. The platform strengthened the club’s digital presence, ensuring transparency, engagement, and recognition across Bandarban University.",
     borderColor: "#dafbe7",
   },
 ];
@@ -52,13 +72,13 @@ export default function Page() {
 
       {/* Subtitle */}
       <p className="px-6 text-center text-base md:text-lg text-black/80 max-w-3xl mx-auto leading-relaxed mb-16">
-        From its foundation in 2022 to leading university-wide tech festivals,
+        From its foundation in 2025 to leading university-wide tech festivals,
         BU CSE Club has grown into a powerhouse of innovation, collaboration,
         and student-led excellence.
       </p>
 
       {/* Timeline */}
-      <div className="px-6 mb-14 relative max-w-5xl mx-auto">
+      <div className="px-6 mb-14 relative w-[90%] mx-auto">
         {/* Vertical Line */}
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-[#028237]/40" />
 
@@ -92,7 +112,9 @@ export default function Page() {
                           <CalendarDays className="w-5 h-5 text-[#028237]" />
                           <h3 className="text-xl font-bold">{event.year}</h3>
                         </div>
-                        <p className="text-black/80">{event.description}</p>
+                        <p className="text-black/80 text-justify">
+                          {event.description}
+                        </p>
                       </div>
                     </div>
                     <div className="hidden md:block w-1/2" />
@@ -111,7 +133,9 @@ export default function Page() {
                           <CalendarDays className="w-5 h-5 text-[#028237]" />
                           <h3 className="text-xl font-bold">{event.year}</h3>
                         </div>
-                        <p className="text-black/80">{event.description}</p>
+                        <p className="text-black/80 text-justify">
+                          {event.description}
+                        </p>
                       </div>
                     </div>
                   </>

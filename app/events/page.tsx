@@ -3,81 +3,9 @@
 import React, { useState } from "react";
 import { CalendarDays } from "lucide-react";
 import EventCard from "../Components/Cards/EventCard";
+import { events } from "./data/eventData";
 
 const tabs = ["All Events", "Workshops", "Seminars", "Competitions"];
-
-const events: Array<{
-  id: number;
-  title: string;
-  type: string;
-  date: string;
-  time: string;
-  location: string;
-  tags: string[];
-  status: "Completed" | "Upcoming";
-  image: string;
-}> = [
-  {
-    id: 2,
-    title: "React Workshop for Beginners",
-    type: "Workshops",
-    date: "12 January 2026",
-    time: "10:00 AM – 1:00 PM",
-    location: "CSE Lab 3",
-    tags: ["React", "Frontend", "Workshop"],
-    status: "Upcoming",
-    image: "/images/react_workshop.webp",
-  },
-  {
-    id: 3,
-    title: "AI Ethics Seminar",
-    type: "Seminars",
-    date: "20 February 2026",
-    time: "2:00 PM – 4:00 PM",
-    location: "Auditorium Hall",
-    tags: ["AI", "Ethics", "Seminar"],
-    status: "Upcoming",
-    image: "/images/ai_ethics_seminar.jpg",
-  },
-  {
-    id: 4,
-    title: "bdapps Bootcamp for Indigenous Students in Bandarban",
-    type: "Workshops",
-    date: "To be announced",
-    time: "To be announced",
-    location: "Bandarban University / Govt. Women's College",
-    tags: ["Bootcamp", "bdapps", "Skills"],
-    status: "Completed",
-    image: "/images/bdapps.jpg",
-  },
-  {
-    id: 5,
-    title: "Let's Code Your Career through Programming",
-    type: "Seminars",
-    date: "26 July 2026",
-    time: "12:00 PM – 1:00 PM",
-    location: "Bandarban University Conference Room",
-    tags: ["Programming Hero", "Career", "Coding"],
-    status: "Completed",
-    image: "/images/PH.jpg",
-    // description:
-    //   "A special session hosted by Programming Hero in collaboration with BU_CSE Club — inspiring students to explore programming as a future-ready skill, with live Q&A, coding challenges, and career insights.",
-    // link: "https://forms.gle/WqCyCaERy7LLfkBCA",
-  },
-  {
-    id: 6,
-    title: "CSE Fest 2025 Prize Distribution Ceremony",
-    type: "Competitions",
-    date: "16 February 2025",
-    time: "10:00 AM",
-    location: "Bandarban University Conference Hall",
-    tags: ["CSEFest2025", "Prize Distribution", "Celebration"],
-    status: "Upcoming",
-    image: "/images/price_given.jpg",
-    // description:
-    //   "Celebrating the winners of bdapps presents CSE Fest 2025! Join us for the Prize Distribution Ceremony sponsored by Bandarban Hill District Council and Lumbini Limited.",
-  },
-];
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState("All Events");
