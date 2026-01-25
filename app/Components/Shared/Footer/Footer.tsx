@@ -165,7 +165,7 @@ export default function Footer() {
           </div>
 
           <Link
-            href="/join"
+            href="/member/register"
             className="bg-linear-to-r  from-[#ff6900] to-[#ffaa00] text-white px-4 py-2 rounded-md  font-semibold flex justify-center items-center gap-2 uppercase border border-amber-50 hover:from-[#ffaa00] hover:to-[#ff6900] transition"
           >
             <User2 /> Become a Member
