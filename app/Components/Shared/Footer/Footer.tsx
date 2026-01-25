@@ -26,7 +26,7 @@ export default function Footer() {
         {/* Contact Us */}
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <div className="bg-gradient-to-br from-purple-600 to-indigo-500 p-2 rounded-md">
+            <div className="bg-linear-to-br from-purple-600 to-indigo-500 p-2 rounded-md">
               <MapPin className="text-white" size={20} />
             </div>
             <h3 className="text-xl font-semibold">Contact Us</h3>
@@ -54,7 +54,7 @@ export default function Footer() {
         {/* Quick Links */}
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <div className="bg-gradient-to-br from-green-500 to-teal-400 p-2 rounded-md">
+            <div className="bg-linear-to-br from-green-500 to-teal-400 p-2 rounded-md">
               <Link2 className="text-white" size={20} />
             </div>
             <h3 className="text-xl font-semibold">Quick Links</h3>
@@ -96,7 +96,7 @@ export default function Footer() {
         {/* Our Courses */}
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <div className="bg-gradient-to-br from-pink-500 to-purple-500 p-2 rounded-md">
+            <div className="bg-linear-to-br from-pink-500 to-purple-500 p-2 rounded-md">
               <GraduationCap className="text-white" size={20} />
             </div>
             <h3 className="text-xl font-semibold">Our Courses</h3>
@@ -128,7 +128,7 @@ export default function Footer() {
         {/* Connect With Us */}
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <div className="bg-gradient-to-br from-pink-500 to-red-400 p-2 rounded-md">
+            <div className="bg-linear-to-br from-pink-500 to-red-400 p-2 rounded-md">
               <Share2 className="text-white" size={20} />
             </div>
             <h3 className="text-xl font-semibold">Connect With Us</h3>
