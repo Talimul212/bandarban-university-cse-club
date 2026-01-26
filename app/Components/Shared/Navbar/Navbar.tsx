@@ -112,17 +112,23 @@ export default function Navbar() {
         {/* Drawer Header */}
         <div className="flex items-center justify-between px-6 py-4 mt-2 border-b border-amber-50">
           <div className="flex items-center gap-2">
-            <Monitor
-              size={35}
-              className="bg-linear-to-br text-white from-green-500 to-teal-400 p-2 rounded-md"
+            <Image
+              src="/CSE_Club_Logo.png"
+              alt="BU CSE Club Logo"
+              width={40}
+              height={40}
+              className="bg-white rounded-md"
             />
             <p className="text-[#028237] font-bold text-lg flex flex-col">
               BU
               <span className="text-xs">CSE CLUB</span>
             </p>
           </div>
-          <button onClick={() => setDrawerOpen(false)}>
-            <X size={20} />
+          <button
+            className="text-green-600  "
+            onClick={() => setDrawerOpen(false)}
+          >
+            <X size={25} />
           </button>
         </div>
 

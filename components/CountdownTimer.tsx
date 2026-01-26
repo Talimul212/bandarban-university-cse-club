@@ -37,7 +37,7 @@ export default function CountdownTimer({ targetDate }: { targetDate: string }) {
       {Object.entries(timeLeft).map(([unit, value]) => (
         <div
           key={unit}
-          className="bg-green-600 text-white p-3 rounded-lg min-w-17.5"
+          className="bg-green-600 text-white md:p-3 rounded-lg min-w-17.5"
         >
           <div className="text-2xl font-bold">{value}</div>
           <div className="text-xs uppercase text-gray-200">{unit}</div>

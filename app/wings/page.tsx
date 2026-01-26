@@ -59,10 +59,7 @@ export default function WingsPage() {
         <div className="mb-20 lg:mb-32 text-center" data-aos="zoom-in">
           <h2 className="mb-6 text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight">
             High Demanded{" "}
-            <span className="text-[#09c558] relative">
-              Course
-              <span className="absolute bottom-1 left-0 w-full h-2 bg-[#09c558]/10 -z-10 rounded-sm"></span>
-            </span>
+            <span className="text-[#09c558] relative">Course</span>
           </h2>
           <p className="mx-auto max-w-2xl text-gray-600 text-lg md:text-xl font-medium leading-relaxed">
             Explore our diverse range of courses designed to equip you with
@@ -85,7 +82,7 @@ export default function WingsPage() {
                 data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
                 data-aos-duration="1000"
               >
-                <div className="group relative aspect-4/3 sm:aspect-video md:aspect-3/2 w-full overflow-hidden rounded-[2.5rem] shadow-2xl ring-1 ring-black/5">
+                <div className="group relative aspect-4/3 sm:aspect-video md:aspect-3/2 w-full overflow-hidden rounded-md shadow-md ring-1 ring-black/5">
                   <Image
                     src={course.image}
                     alt={course.title}

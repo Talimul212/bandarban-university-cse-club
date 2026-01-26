@@ -54,8 +54,8 @@ export const events = {
       isFeatured: false,
       isTba: false,
 
-      startDateTime: "2026-02-20T14:00:00",
-      endDateTime: "2026-02-20T16:00:00",
+      startDateTime: "2024-01-20T14:00:00",
+      endDateTime: "2024-01-20T16:00:00",
 
       location: {
         type: "Hybrid",
@@ -70,7 +70,7 @@ export const events = {
       },
 
       registration: {
-        status: "Open",
+        status: "closed",
         capacity: 200,
         registeredCount: 120,
         fee: 0,
@@ -85,18 +85,17 @@ export const events = {
     },
     {
       id: "evt_004",
-      slug: "bdapps-bootcamp-indigenous",
-      title: "bdapps Bootcamp for Indigenous Students",
+      slug: "bdapps-bootcamp-ethnic",
+      title: "bdapps Bootcamp for Ethnic  Students",
       category: "Workshops",
       isFeatured: true,
-      isTba: true, // TBA = To be announce
-
-      startDateTime: null, // Null because TBA = true
-      endDateTime: null,
+      isTba: false, // TBA = To be announce
+      startDateTime: "2025-03-20T14:00:00",
+      endDateTime: "2025-03-20T16:00:00",
 
       location: {
         type: "On-site",
-        venue: "Bandarban University / Govt. Women's College",
+        venue: "Bandarban University ",
         address: "Bandarban",
         mapLink: "",
       },
@@ -107,7 +106,7 @@ export const events = {
       },
 
       registration: {
-        status: "Coming Soon",
+        status: "Completed",
         capacity: 100,
         registeredCount: 0,
         fee: 0,
@@ -117,7 +116,7 @@ export const events = {
       tags: ["Bootcamp", "bdapps", "Skills"],
       image: "/images/bdapps.jpg",
       description:
-        "A bootcamp empowering indigenous students with mobile app development skills using bdapps.",
+        "A bootcamp empowering Ethnic students with mobile app development skills using bdapps.",
       resources: [],
     },
     {
@@ -128,8 +127,8 @@ export const events = {
       isFeatured: true,
       isTba: false,
 
-      startDateTime: "2026-07-26T12:00:00",
-      endDateTime: "2026-07-26T13:00:00",
+      startDateTime: "2025-05-25T12:00:00",
+      endDateTime: "2025-05-25T13:00:00",
 
       location: {
         type: "On-site",
@@ -144,7 +143,7 @@ export const events = {
       },
 
       registration: {
-        status: "Open",
+        status: "Closed",
         capacity: 80,
         registeredCount: 15,
         fee: 0,
@@ -154,7 +153,7 @@ export const events = {
       tags: ["Programming Hero", "Career", "Coding"],
       image: "/images/PH.jpg",
       description:
-        "A special session hosted by Programming Hero in collaboration with BU CSE Club...",
+        "A special session hosted by Programming Hero in collaboration with BU CSE Club — inspiring students to explore programming as a future-ready skill, with live Q&A, coding challenges, and career insights.",
       resources: [],
     },
     {
@@ -227,7 +226,7 @@ export const events = {
       tags: ["Bootcamp", "C Programming", "Python"],
       image: "/images/A promotional poster.png",
       description:
-        "BU CSE Club is hosting a 5-day intensive coding bootcamp...",
+        "BU CSE Club is hosting a 5-day intensive coding bootcamp designed for both school (Beginner) and college (Intermediate) students. Participants will be introduced to C and Python programming through hands-on sessions, teamwork, and guided mentorship. The bootcamp aims to build strong foundations in coding, problem-solving, and computational thinking, empowering students to take their first steps into the world of programming.",
       resources: [],
     },
   ],
