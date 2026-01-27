@@ -1,11 +1,4 @@
-// utils/eventHelpers.ts
-import {
-  format,
-  isPast,
-  isFuture,
-  isWithinInterval,
-  differenceInSeconds,
-} from "date-fns";
+import { format, isPast, isWithinInterval } from "date-fns";
 
 export const getEventStatus = (event: any) => {
   if (event.isTba || !event.startDateTime) return "Upcoming"; // Default for TBA

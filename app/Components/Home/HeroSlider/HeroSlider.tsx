@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,8 +14,6 @@ type Slide = {
   subtitle: string;
   buttonText?: string;
   buttonLink?: string;
-  // quota: string;
-  // icon: any;
 };
 
 interface Props {
