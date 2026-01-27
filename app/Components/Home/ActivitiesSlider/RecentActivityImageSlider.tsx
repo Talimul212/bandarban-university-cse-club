@@ -64,7 +64,7 @@ export default function RecentActivityImageSlider({
             >
               {activities.map((activity) => (
                 <SwiperSlide key={activity.id}>
-                  <div className="relative aspect-video md:h-[600px] w-full">
+                  <div className="relative aspect-video md:h-150 w-full">
                     <Image
                       src={activity.image}
                       alt={activity.title}
