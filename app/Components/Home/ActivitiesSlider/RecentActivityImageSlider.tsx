@@ -95,7 +95,7 @@ export default function RecentActivityImageSlider({
 
                 return (
                   <SwiperSlide key={activity.id}>
-                    <div className="relative aspect-video md:h-150 w-full">
+                    <div className="relative aspect-video h-96 md:h-150 w-full">
                       {isVideo ? (
                         <>
                           <video
@@ -149,14 +149,14 @@ export default function RecentActivityImageSlider({
                           {/* Gradient Overlay */}
                           <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
                           {/* Content Overlay */}
-                          <div className="absolute bottom-0 left-0 p-8 md:p-12 text-white max-w-2xl">
-                            <span className="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-widest uppercase bg-green-500 rounded-full">
+                          <div className="absolute bottom-0  left-0 p-8 md:p-12 text-white max-w-2xl">
+                            <span className="inline-block px-2 py-1 mb-2 md:mb-4 text-xs font-semibold tracking-widest uppercase bg-green-500 rounded-full">
                               {activity.date}
                             </span>
-                            <h3 className="text-2xl md:text-4xl font-bold mb-2">
+                            <h3 className="text-lg md:text-4xl font-bold md:mb-2">
                               {activity.title}
                             </h3>
-                            <p className="text-slate-200 text-sm md:text-base leading-relaxed opacity-90">
+                            <p className="text-slate-200 text-xs md:text-base leading-relaxed opacity-90">
                               {activity.subtitle}
                             </p>
                           </div>

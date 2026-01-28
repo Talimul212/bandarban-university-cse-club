@@ -1,32 +1,33 @@
 "use client";
-import {
-  ArrowRight,
-  BookDown,
-  Code,
-  FolderCode,
-  Smartphone,
-} from "lucide-react";
-
+import Image from "next/image";
+import { BookDown, Code, FolderCode, NotebookPenIcon } from "lucide-react";
 const courses = [
   {
     id: 1,
-    title: "Competitive Programming",
+    title: "Introduction to Competitive Programming",
     description:
       "Sharpen problem-solving skills with algorithms, data structures, and contests.",
     icon: <Code />,
+    image: "/images/copetitiveProgramming.jpg",
+    colorClass: "bg-gradient-to-br from-purple-600 to-indigo-500",
   },
   {
     id: 2,
-    title: "Web Development",
+    title: "Web Development with Laravel",
     description:
       "Learn modern web development with real-world projects and frameworks.",
     icon: <FolderCode />,
+    image: "/images/course_1711349001.jpg",
+    colorClass: "bg-gradient-to-br from-pink-500 to-red-400",
   },
   {
     id: 3,
-    title: "Mobile Application",
-    description: "Build Android and iOS apps with modern tools and frameworks.",
-    icon: <Smartphone />,
+    title: "Thesis Paper Fundamentals",
+    description:
+      "Explore the structure, methodology, and academic writing techniques essential for crafting impactful thesis papers.",
+    icon: <NotebookPenIcon />,
+    image: "/images/IntroductionToResearch.jpg",
+    colorClass: "bg-gradient-to-br from-green-500 to-teal-400",
   },
 ];
 
@@ -40,10 +41,10 @@ export default function Wings() {
           <div className="flex justify-center mb-6">
             <button className="flex items-center gap-2 px-4 py-2 rounded-full border border-[#09c558] text-[#09c558] font-semibold hover:bg-[#09c558]/10 transition">
               <BookDown className="w-4 h-4" />
-              Club Wings
+              Available Courses
             </button>
           </div>
-          <p className="mx-auto max-w-2xl text-gray-700">
+          <p className="mx-auto max-w-3xl text-gray-700">
             All courses listed below are offered under the specialized wings of
             BU CSE Club. Each wing focuses on empowering students with
             industry-relevant skills through hands-on learning and mentorship.
@@ -58,27 +59,49 @@ export default function Wings() {
           {courses.map((course) => (
             <div
               key={course.id}
-              className="rounded-xl border-b-2 hover:border-yellow-500 border-green-300 bg-white p-6 shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
+              className="flex flex-col rounded-xl border border-transparent duration-700 hover:border-green-500 overflow-hidden bg-white shadow-xl transition hover:shadow-2xl hover:-translate-y-1 h-full"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#09c558]/10 text-2xl">
-                {course.icon}
+              {/* Top Image */}
+              <div className="relative h-48 w-full">
+                <Image
+                  src={course.image}
+                  alt={course.title}
+                  fill
+                  className="object-cover"
+                />
+
+                {/* Icon absolutely positioned in middle bottom */}
+                <div className="absolute bg-white p-3 rounded-full -bottom-6 left-1/2 transform -translate-x-1/2 shadow">
+                  <div
+                    className={`flex h-10 w-10 items-center justify-center rounded-md text-white shadow-md ${course.colorClass}`}
+                  >
+                    {course.icon}
+                  </div>
+                </div>
               </div>
 
-              <h3 className="mb-2 text-xl font-semibold text-gray-900">
-                {course.title}
-              </h3>
+              {/* Content Section */}
+              <div className="flex flex-col justify-between p-6 flex-1">
+                <div>
+                  {/* Title */}
+                  <h3 className="mb-2 text-lg font-bold text-gray-900">
+                    {course.title}
+                  </h3>
 
-              <p className="mb-6 text-gray-600">{course.description}</p>
+                  {/* Description */}
+                  <p className="text-gray-600 text-sm mb-6">
+                    {course.description}
+                  </p>
+                </div>
 
-              <a
-                href={`/wings`}
-                className="font-medium text-[#09c558] hover:gap-3 transition-all flex justify-between items-center"
-              >
-                <span>Learn more</span>
-                <span>
-                  <ArrowRight size={18} />
-                </span>
-              </a>
+                {/* CTA Button always at bottom */}
+                <a
+                  href={`/wings`}
+                  className="inline-block text-sm font-semibold text-white bg-[#09c558] px-4 py-2 rounded-md hover:bg-green-600 transition mt-auto"
+                >
+                  VIEW DETAILS ➝
+                </a>
+              </div>
             </div>
           ))}
         </div>
