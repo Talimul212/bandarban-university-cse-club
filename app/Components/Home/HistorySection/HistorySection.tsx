@@ -112,10 +112,8 @@ export default function HistorySection() {
           {/* Stat 1: Active Members */}
           <div className="bg-[#028237] md:h-30  rounded-xl p-4 shadow-md text-white hover:scale-[1.02] transition duration-300">
             <div className="flex w-full  justify-between items-center">
-              <Users className="mx-auto bg-white/40 p-2 rounded-md backdrop-blur-sm border border-amber-50 text-start w-10 h-10 mb-2" />
-              <h4 className="text-3xl ms-30 font-extrabold text-center">
-                3,000+
-              </h4>
+              <Users className=" bg-white/40 p-2 rounded-md backdrop-blur-sm border border-amber-50 text-start w-10 h-10 mb-2" />
+              <h4 className="text-3xl ms-30 font-extrabold text-center">50+</h4>
             </div>
             <p className="text-sm text-start font-semibold pb-3">
               Active Members
@@ -129,7 +127,7 @@ export default function HistorySection() {
           <div className="bg-[#dafbe7] md:h-30   rounded-xl p-4 shadow-md text-[#028237] hover:scale-[1.02] transition duration-300">
             <div className="flex w-full  justify-between items-center">
               <BookOpenCheck className=" bg-white p-2 rounded-md backdrop-blur-sm border border-[#028237] text-start w-10 h-10 mb-2" />
-              <h4 className="text-3xl ms-30 font-extrabold text-center">80+</h4>
+              <h4 className="text-3xl ms-30 font-extrabold text-center">15+</h4>
             </div>
             <p className="text-sm text-start font-semibold mb-3">
               Committee Members

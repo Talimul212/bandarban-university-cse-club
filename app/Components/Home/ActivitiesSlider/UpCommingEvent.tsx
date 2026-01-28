@@ -55,7 +55,7 @@ export default function UpcomingEventSlider({ events }: { events: Event[] }) {
   };
 
   return (
-    <div className="w-full bg-linear-to-b from-green-600/10 to-transparent py-12">
+    <div className="w-full bg-linear-to-b from-green-600/10 to-transparent py-16">
       <div className="w-full lg:w-[90%] mx-auto px-4 md:px-0">
         <Swiper
           modules={[Autoplay, Pagination, EffectFade]}
@@ -64,7 +64,7 @@ export default function UpcomingEventSlider({ events }: { events: Event[] }) {
           autoplay={{ delay: 6000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
           loop
-          className="rounded-[2.5rem] overflow-hidden shadow-2xl shadow-green-900/10 bg-white"
+          className="rounded-md overflow-hidden shadow-2xl shadow-green-900/10 bg-white"
         >
           {events.map((event) => {
             const startDate = new Date(event.startDateTime);
@@ -94,24 +94,24 @@ export default function UpcomingEventSlider({ events }: { events: Event[] }) {
                   </div>
 
                   {/* Right Section */}
-                  <div className="lg:col-span-7 p-8 md:p-12 flex flex-col justify-between">
+                  <div className="lg:col-span-7 p-4 md:p-12 flex flex-col justify-between">
                     <div>
                       <h2 className="text-2xl md:text-4xl font-black text-slate-900 mb-6 leading-tight">
                         {event.title}
                       </h2>
 
                       {/* Info Grid */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-4">
+                      <div className="grid grid-cols-2 sm:grid-cols-2 gap-y-6 gap-x-4">
                         {/* Time & Date */}
-                        <div className="flex items-center gap-4 group">
-                          <div className="p-3 bg-green-50 rounded-2xl group-hover:bg-green-600 transition-colors duration-300">
-                            <Clock className="w-6 h-6 text-green-600 group-hover:text-white" />
+                        <div className="flex items-center gap-4 group bg-gray-50 p-2 rounded-md">
+                          <div className=" bg-linear-to-br from-pink-500 to-purple-500 p-2 rounded-md transition-colors duration-300">
+                            <Clock className="md:w-6 md:h-6 h-4 w-4 text-white " />
                           </div>
                           <div>
                             <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">
                               When
                             </p>
-                            <p className="text-sm font-bold text-slate-800">
+                            <p className="text-xs md:text-sm font-bold text-slate-800">
                               {startDate.toLocaleDateString("en-US", {
                                 month: "long",
                                 day: "numeric",
@@ -126,45 +126,45 @@ export default function UpcomingEventSlider({ events }: { events: Event[] }) {
                         </div>
 
                         {/* Venue */}
-                        <div className="flex items-center gap-4 group">
-                          <div className="p-3 bg-green-50 rounded-2xl group-hover:bg-green-600 transition-colors duration-300">
-                            <MapPin className="w-6 h-6 text-green-600 group-hover:text-white" />
+                        <div className="flex items-center gap-4 group bg-gray-50 p-2 rounded-md">
+                          <div className="  p-2 rounded-md bg-linear-to-br from-purple-600 to-indigo-500 transition-colors duration-300">
+                            <MapPin className="md:w-6 md:h-6 h-4 w-4 text-white" />
                           </div>
                           <div>
                             <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">
                               Venue
                             </p>
-                            <p className="text-sm font-bold text-slate-800">
+                            <p className="text-xs md:text-sm font-bold text-slate-800">
                               {event.location.venue}
                             </p>
                           </div>
                         </div>
 
                         {/* Days Left */}
-                        <div className="flex items-center gap-4 group">
-                          <div className="p-3 bg-green-50 rounded-2xl group-hover:bg-green-600 transition-colors duration-300">
-                            <Hourglass className="w-6 h-6 text-green-600 group-hover:text-white" />
+                        <div className="flex items-center gap-4 group bg-gray-50 p-2 rounded-md">
+                          <div className="bg-linear-to-br from-pink-500 to-red-400 p-2 rounded-md transition-colors duration-300">
+                            <Hourglass className="md:w-6 md:h-6 h-4 w-4 text-white " />
                           </div>
                           <div>
                             <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">
                               Deadline
                             </p>
-                            <p className="text-sm font-bold text-slate-800">
+                            <p className="text-xs md:text-sm font-bold text-slate-800">
                               {getDaysLeft(event.startDateTime)}
                             </p>
                           </div>
                         </div>
 
                         {/* Capacity */}
-                        <div className="flex items-center gap-4 group">
-                          <div className="p-3 bg-green-50 rounded-2xl group-hover:bg-green-600 transition-colors duration-300">
-                            <Users className="w-6 h-6 text-green-600 group-hover:text-white" />
+                        <div className="flex items-center gap-4 group bg-gray-50 p-2 rounded-md">
+                          <div className="bg-linear-to-br from-green-500 to-teal-400 p-2 rounded-md  transition-colors duration-300">
+                            <Users className="md:w-6 md:h-6 h-4 w-4 text-white" />
                           </div>
                           <div>
-                            <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+                            <p className=" text-xs font-bold text-slate-400 uppercase tracking-widest">
                               Availability
                             </p>
-                            <p className="text-sm font-bold text-slate-800">
+                            <p className="text-xs md:text-sm font-bold text-slate-800">
                               {event.registration.capacity -
                                 event.registration.registeredCount}{" "}
                               Seats Left
@@ -188,11 +188,11 @@ export default function UpcomingEventSlider({ events }: { events: Event[] }) {
                       </div>
 
                       <Link
-                        href={event.registration.link}
-                        className={`inline-flex items-center gap-3 px-10 py-4 rounded-2xl font-bold transition-all duration-300 ${
+                        href={`/events/${event.id}`}
+                        className={` items-center w-full md:w-[35%] gap-3 px-10 md:py-4 py-2 uppercase flex justify-center rounded-md font-bold transition-all duration-300 ${
                           isFull
                             ? "bg-slate-200 text-slate-500 cursor-not-allowed"
-                            : "bg-green-600 text-white hover:bg-slate-900 shadow-xl shadow-green-200 hover:shadow-slate-300"
+                            : "bg-green-600 text-white hover:bg-green-700 shadow-xl shadow-green-200 hover:shadow-slate-300"
                         }`}
                       >
                         {isFull ? "Fully Booked" : "Join Event"}
