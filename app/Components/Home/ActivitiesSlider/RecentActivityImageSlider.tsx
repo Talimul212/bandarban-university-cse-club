@@ -127,7 +127,7 @@ export default function RecentActivityImageSlider({
                           />
 
                           {/* Play/Pause Button Overlay */}
-                          <button
+                          {/* <button
                             onClick={togglePlay}
                             className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition duration-300"
                           >
@@ -136,7 +136,7 @@ export default function RecentActivityImageSlider({
                             ) : (
                               <PlayCircle className="w-12 h-12 text-white" />
                             )}
-                          </button>
+                          </button> */}
                         </>
                       ) : isImage ? (
                         <>
