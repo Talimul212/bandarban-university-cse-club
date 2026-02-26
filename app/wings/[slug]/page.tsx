@@ -418,14 +418,13 @@ export default function CourseDetailPage() {
 
                 {/* CTA repeated for mobile convenience */}
                 <div className="mt-6 lg:hidden">
-                  <a
-                    href={course.enrollFormUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#028237] text-white font-bold rounded-xl"
+                  <Link
+                    href={`/enroll?courseId=${course.id}&title=${encodeURIComponent(course.title)}&fee=${course.fee}&type=${course.type}`}
+                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#028237] hover:bg-[#026d2f] text-white font-bold text-base rounded-xl shadow-md shadow-green-200 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 mb-3"
                   >
-                    Enroll Now <ExternalLink className="w-4 h-4" />
-                  </a>
+                    Enroll Now
+                    <ExternalLink className="w-4 h-4" />
+                  </Link>
                 </div>
               </div>
             </div>
