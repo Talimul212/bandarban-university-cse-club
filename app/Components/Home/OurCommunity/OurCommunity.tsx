@@ -2,7 +2,7 @@
 "use client";
 
 import * as Tooltip from "@radix-ui/react-tooltip";
-import { HeartHandshake, Info } from "lucide-react";
+import { HeartHandshake } from "lucide-react";
 import Image from "next/image";
 
 const images = [
