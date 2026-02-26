@@ -31,12 +31,13 @@ export const activityData = [
   },
   {
     id: "act_004",
-    title: "bdapps Bootcamp for Ethnic Students",
+    title: "Bandarban University Main Campus!",
     subtitle:
-      "A bootcamp empowering Ethnic students with mobile app development skills using bdapps.",
-    date: "2025-10-15",
-    image: "/images/25.jpg",
+      "Committed to providing international standard education in the heart of the hills.",
+    date: "2017-2-07",
+    image: "/images/maincampus2.jpg",
   },
+
   {
     id: "act_005",
     title: " Cybersecurity Awareness & IT Career",
@@ -47,16 +48,56 @@ export const activityData = [
   },
   {
     id: "act_006",
-    title: "Workshop Recap",
-    subtitle: "UI/UX Design Principles",
-    date: "2025-10-15",
-    image: "/video/bu_cse_video.mp4",
+    title: " bdapps is excited to announce a two-day bootcamp",
+    subtitle:
+      "Introduction to bdapps: Get to know bdapps and explore its wide range of possibilities for creating mobile applications",
+    date: "2025-6-25",
+    image: "/images/bootcamp.jpg",
   },
   {
     id: "act_007",
+    title: " Competitive Programming at BU CSE Club!",
+    subtitle:
+      "A session to enhance competitive programming skills among students.",
+    date: "2025-1-06",
+    image: "/images/15.jpg",
+  },
+  {
+    id: "act_008",
+    title: "bdapps Bootcamp for Ethnic Students",
+    subtitle:
+      "A bootcamp empowering Ethnic students with mobile app development skills using bdapps.",
+    date: "2025-10-15",
+    image: "/images/25.jpg",
+  },
+];
+export const videoSectionData = [
+  {
+    id: "act_001",
+    title: "Workshop Recap",
+    subtitle: "UI/UX Design Principles",
+    date: "2025-10-15",
+    image: "/video/bu_CSe_video.mp4",
+  },
+  {
+    id: "act_002",
     title: "Workshop Recap",
     subtitle: "UI/UX Design Principles",
     date: "2025-10-15",
     image: "/video/bu_cse_2.mp4",
+  },
+  {
+    id: "act_003",
+    title: "Workshop Recap",
+    subtitle: "UI/UX Design Principles",
+    date: "2025-10-15",
+    image: "/video/bu_cse_3.mp4",
+  },
+  {
+    id: "act_004",
+    title: "Workshop Recap",
+    subtitle: "UI/UX Design Principles",
+    date: "2025-10-15",
+    image: "/video/bu_cse_4.mp4",
   },
 ];
