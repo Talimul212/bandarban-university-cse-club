@@ -12,7 +12,7 @@ export default function VideoSection() {
 
         <div className="relative w-full h-96 md:h-125 rounded-md shadow-2xl overflow-hidden bg-slate-100">
           <video
-            src="/video/bu_cse_video.mp4"
+            src="/bu_cse_video.mp4"
             controls
             loop={false}
             playsInline
