@@ -284,7 +284,7 @@ export default function CourseEnrollmentForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }));
   };
-  // Date of Birth change handler with ag calucation
+  // Date of Birth change handler with ag calculation
   const handleDOBChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleChange(e);
     const dob = new Date(e.target.value);

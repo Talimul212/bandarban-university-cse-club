@@ -24,7 +24,7 @@ import {
 import { courses } from "../data/courses";
 import { createPortal } from "react-dom";
 
-// Sylabus view
+// Syllabus view
 function PdfModal({
   pdfUrl,
   title,

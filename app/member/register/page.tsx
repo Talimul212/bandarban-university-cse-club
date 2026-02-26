@@ -230,8 +230,8 @@ export default function Membership() {
             </p>
             <div>
               <span className="font-semibold text-[#028237]">Number:</span>{" "}
-              <span className="font-bold text-xl">01703666771</span> (Bkash /
-              Nagad)
+              <span className="font-bold text-md">+880 1820-400999</span> (Bkash
+              / Nagad)
             </div>
           </div>
 
