@@ -323,7 +323,7 @@ export default function WingsPage() {
                     >
                       {/* Image */}
                       <div className="w-full md:w-[48%]">
-                        <div className="group relative aspect-video w-full overflow-hidden rounded-lg border-[1px] border-[#09c558] shadow-xl ring-1 ring-black/5">
+                        <div className="group relative aspect-video w-full overflow-hidden rounded-lg border border-[#09c558] shadow-xl ring-1 ring-black/5">
                           <Image
                             src={course.image}
                             alt={course.title}
