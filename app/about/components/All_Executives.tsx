@@ -25,7 +25,7 @@ const committees = [
         name: "Talimul Islam",
         role: "General Secretary",
         term: "2024",
-        photo: "/member/1.png",
+        photo: "/member/1.2.png",
       },
     ],
   },

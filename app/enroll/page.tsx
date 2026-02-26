@@ -1,3 +1,6 @@
+/* eslint-disable react-hooks/set-state-in-effect */
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
@@ -18,7 +21,7 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import { useSearchParams } from "next/navigation";
-import { navigate } from "next/dist/client/components/segment-cache/navigation";
+
 import Link from "next/link";
 
 // Types
@@ -906,15 +909,15 @@ export default function CourseEnrollmentForm() {
             </div>
 
             {/* ── Submit ── */}
-            <div className="flex items-center justify-between pt-2 pb-8">
-              <p className="text-sm text-gray-400">
-                <span className="text-red-500">*</span> All required fields must
-                be filled
+            <div className="md:flex items-center justify-between pt-2 pb-8">
+              <p className="text-sm text-gray-400 mb-2">
+                <span className="text-red-500 ">*</span> All required fields
+                must be filled
               </p>
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex items-center gap-2 bg-green-600 hover:bg-green-700 disabled:bg-green-400 text-white px-10 py-3.5 rounded-xl font-bold text-base shadow-lg shadow-green-200 hover:shadow-xl hover:shadow-green-300 hover:-translate-y-0.5 transition-all duration-200 disabled:cursor-not-allowed disabled:transform-none"
+                className="flex items-center gap-2 md:w-auto w-full bg-green-600 hover:bg-green-700 disabled:bg-green-400 text-white px-10 py-3.5 rounded-lg font-bold text-base shadow-lg shadow-green-200 hover:shadow-xl hover:shadow-green-300 hover:-translate-y-0.5 transition-all duration-200 disabled:cursor-not-allowed disabled:transform-none"
               >
                 {isSubmitting ? (
                   <>
