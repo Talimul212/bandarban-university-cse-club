@@ -46,14 +46,14 @@ export const activityData = [
     image: "/images/35.jpg",
   },
   {
-    id: "act_005",
+    id: "act_006",
     title: "Workshop Recap",
     subtitle: "UI/UX Design Principles",
     date: "2025-10-15",
-    image: "/video/bu_CSe_video.mp4",
+    image: "/video/bu_cse_video.mp4",
   },
   {
-    id: "act_006",
+    id: "act_007",
     title: "Workshop Recap",
     subtitle: "UI/UX Design Principles",
     date: "2025-10-15",

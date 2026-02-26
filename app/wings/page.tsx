@@ -15,7 +15,6 @@ import {
   Code2,
   Globe,
   FlaskConical,
-  GraduationCap,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -48,14 +47,14 @@ const TABS = [
     h_description:
       "From frontend to backend, mobile to cloud — master the full development stack with hands-on projects and real deployments.",
   },
-  {
-    key: "Courses",
-    label: "Courses",
-    icon: GraduationCap,
-    h_title: "Structured Courses",
-    h_description:
-      "Follow a carefully designed curriculum, earn certifications, and advance your skills through structured, mentor-guided learning.",
-  },
+  // {
+  //   key: "Courses",
+  //   label: "Courses",
+  //   icon: GraduationCap,
+  //   h_title: "Structured Courses",
+  //   h_description:
+  //     "Follow a carefully designed curriculum, earn certifications, and advance your skills through structured, mentor-guided learning.",
+  // },
 ] as const;
 
 type TabKey = (typeof TABS)[number]["key"];
@@ -186,15 +185,15 @@ function TabBar({
   }, [active]);
 
   return (
-    <div className="flex justify-start mb-12 overflow-x-scroll">
+    <div className="flex justify-center items-center mb-12">
       <div
         ref={containerRef}
-        className="relative flex items-center gap-1 p-1.5 bg-gray-100 rounded-2xl border border-gray-200 shadow-inner"
+        className="relative flex items-center gap-1 p-1.5 bg-gray-100 rounded-lg border border-gray-200 shadow-inner overflow-x-auto scrollbar-hide"
       >
         {/* Sliding pill */}
         {pillStyle && (
           <span
-            className="absolute top-1.5 bottom-1.5 bg-[#028237] rounded-xl shadow-md transition-all duration-300 ease-in-out"
+            className="absolute top-1.5 bottom-1.5 bg-[#028237] rounded-lg shadow-md transition-all duration-300 ease-in-out"
             style={{ left: pillStyle.left, width: pillStyle.width }}
           />
         )}
@@ -206,7 +205,7 @@ function TabBar({
               key={key}
               data-tab={key}
               onClick={() => onChange(key)}
-              className={`relative z-10 flex items-center gap-2 px-10 py-5 rounded-xl text-sm font-bold tracking-wide transition-colors duration-200 whitespace-nowrap
+              className={`relative z-10 flex items-center gap-2 px-6 py-3 rounded-xl md:text-lg text-sm font-bold tracking-wide transition-colors duration-200 whitespace-nowrap shrink-0 uppercase
                 ${isActive ? "text-white" : "text-gray-500 hover:text-gray-800"}`}
             >
               <Icon className="w-4 h-4" />
@@ -218,23 +217,22 @@ function TabBar({
     </div>
   );
 }
-
 // Course/Wings Card Section Header
 function SectionHeader({ tabKey }: { tabKey: TabKey }) {
   const tab = TABS.find((t) => t.key === tabKey)!;
   const Icon = tab.icon;
 
   return (
-    <div className="flex flex-col items-start justify-start text-left mb-3 transition-all duration-300">
+    <div className="flex flex-col items-start justify-start text-left mb-10 transition-all duration-300">
       <div className="flex items-center gap-2 mb-3">
         <div className="p-2.5 bg-[#028237]/10 rounded-xl">
-          <Icon className="w-5 h-5 text-[#028237]" />
+          <Icon className="md:w-5 md:h-5 h-4 w-4 text-[#028237]" />
         </div>
-        <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900">
+        <h2 className="text-2xl lg:text-4xl font-extrabold text-gray-900">
           {tab.h_title}
         </h2>
       </div>
-      <p className="max-w-2xl text-gray-500 text-base leading-relaxed">
+      <p className="max-w-2xl text-gray-500 text-base text-justify leading-relaxed">
         {tab.h_description}
       </p>
       {/* Underline accent */}
@@ -276,12 +274,12 @@ export default function WingsPage() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-43.75 h-43.75 bg-gray-50 rounded-full blur-3xl" />
         </div>
 
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-7xl px-3 lg:px-6">
           {/* Top Badge */}
           <div className="flex justify-center mb-3">
             <span className="flex items-center gap-2 px-5 py-2 rounded-full bg-[#028237]/10 text-[#028237] font-bold text-xs uppercase tracking-widest border border-[#028237]/20">
               <Sparkles className="w-4 h-4" />
-              Department Wings
+              Our Wings
             </span>
           </div>
 
@@ -325,12 +323,12 @@ export default function WingsPage() {
                     >
                       {/* Image */}
                       <div className="w-full md:w-[48%]">
-                        <div className="group relative aspect-video w-full overflow-hidden rounded-2xl shadow-xl ring-1 ring-black/5">
+                        <div className="group relative aspect-video w-full overflow-hidden rounded-lg border border-[#09c558] shadow-xl ring-1 ring-black/5">
                           <Image
                             src={course.image}
                             alt={course.title}
                             fill
-                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                            className="object-cover  transition-transform duration-700 group-hover:scale-105"
                             sizes="(max-width: 768px) 100vw, 50vw"
                           />
                           <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/10 to-transparent" />
@@ -359,6 +357,37 @@ export default function WingsPage() {
                               {course.fee}
                             </span>
                           </div>
+                        </div>
+                        {/* Start Date */}
+                        <p className="mb-6 text-xs mt-10 text-gray-400 font-medium">
+                          🗓 Next batch starts:{" "}
+                          <span className="text-gray-700 font-bold">
+                            {course.startDate}
+                          </span>
+                        </p>
+
+                        {/* Action Buttons */}
+                        <div className="flex items-center gap-3 flex-wrap">
+                          <Link
+                            href={`/wings/${course.slug}`}
+                            className="group flex items-center w-full justify-center gap-2 px-6 py-3 bg-[#028237] hover:bg-[#026d2f] text-white font-bold text-sm rounded-lg shadow-md shadow-green-200 transition-all duration-200 hover:shadow-lg hover:shadow-green-300 hover:-translate-y-0.5"
+                          >
+                            Enroll Now
+                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                          </Link>
+
+                          <button
+                            onClick={() =>
+                              setActivePdf({
+                                url: course.syllabusPdf,
+                                title: course.title,
+                              })
+                            }
+                            className="group w-full flex items-center justify-center gap-2 px-6 py-3 bg-white border-2 border-[#028237]/30 hover:border-[#028237] text-[#028237] font-bold text-sm rounded-lg transition-all duration-200 hover:-translate-y-0.5"
+                          >
+                            <FileText className="w-4 h-4" />
+                            View Syllabus
+                          </button>
                         </div>
                       </div>
 
@@ -445,38 +474,6 @@ export default function WingsPage() {
                               {tag}
                             </span>
                           ))}
-                        </div>
-
-                        {/* Start Date */}
-                        <p className="mb-6 text-xs text-gray-400 font-medium">
-                          🗓 Next batch starts:{" "}
-                          <span className="text-gray-700 font-bold">
-                            {course.startDate}
-                          </span>
-                        </p>
-
-                        {/* Action Buttons */}
-                        <div className="flex items-center gap-3 flex-wrap">
-                          <Link
-                            href={`/wings/${course.slug}`}
-                            className="group flex items-center gap-2 px-6 py-3 bg-[#028237] hover:bg-[#026d2f] text-white font-bold text-sm rounded-xl shadow-md shadow-green-200 transition-all duration-200 hover:shadow-lg hover:shadow-green-300 hover:-translate-y-0.5"
-                          >
-                            Enroll Now
-                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                          </Link>
-
-                          <button
-                            onClick={() =>
-                              setActivePdf({
-                                url: course.syllabusPdf,
-                                title: course.title,
-                              })
-                            }
-                            className="group flex items-center gap-2 px-6 py-3 bg-white border-2 border-[#028237]/30 hover:border-[#028237] text-[#028237] font-bold text-sm rounded-xl transition-all duration-200 hover:-translate-y-0.5"
-                          >
-                            <FileText className="w-4 h-4" />
-                            View Syllabus
-                          </button>
                         </div>
                       </div>
                     </div>
