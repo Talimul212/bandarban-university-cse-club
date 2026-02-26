@@ -23,8 +23,8 @@ export default function Home() {
       <UpcomingEventSlider events={upcomingEvents} />
       <RecentActivityImageSlider activities={activityData} />
       <PartnersSection />
-      <Wings />
       <ExecutiveMember />
+      <Wings />
       {/* <OurTeam /> */}
       {/* <VideoSection /> */}
     </div>
