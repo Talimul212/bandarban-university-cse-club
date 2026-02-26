@@ -26,7 +26,7 @@ export default function Home() {
       <Wings />
       <ExecutiveMember />
       {/* <OurTeam /> */}
-      <VideoSection />
+      {/* <VideoSection /> */}
     </div>
   );
 }
