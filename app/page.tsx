@@ -9,6 +9,7 @@ import { activityData } from "./Components/Home/ActivitiesSlider/ActivitiesSlide
 import RecentActivityImageSlider from "./Components/Home/ActivitiesSlider/RecentActivityImageSlider";
 import UpcomingEventSlider from "./Components/Home/ActivitiesSlider/UpCommingEvent";
 import { events as allEvents } from "./events/data/eventData";
+import VideoSection from "./Components/Home/ActivitiesSlider/VideoSection";
 
 export default function Home() {
   const upcomingEvents = allEvents.data.filter(
@@ -25,6 +26,7 @@ export default function Home() {
       <Wings />
       <ExecutiveMember />
       {/* <OurTeam /> */}
+      <VideoSection />
     </div>
   );
 }
