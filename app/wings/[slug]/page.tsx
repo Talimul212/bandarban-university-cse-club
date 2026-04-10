@@ -417,7 +417,7 @@ export default function CourseDetailPage() {
                   </p>
                 </div>
 
-                {/* CTA repeated for mobile convenience */}
+                {/* CTA for mobile convenience */}
                 <div className="mt-6 lg:hidden">
                   <Link
                     href={`/enroll?courseId=${course.id}&title=${encodeURIComponent(course.title)}&fee=${course.fee}&type=${course.type}`}

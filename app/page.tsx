@@ -10,6 +10,7 @@ import RecentActivityImageSlider from "./Components/Home/ActivitiesSlider/Recent
 import UpcomingEventSlider from "./Components/Home/ActivitiesSlider/UpCommingEvent";
 import { events as allEvents } from "./events/data/eventData";
 import VideoSection from "./Components/Home/ActivitiesSlider/VideoSection";
+import EnrollManagementPage from "./admin/enrollManagement/EnrollManagement";
 
 export default function Home() {
   const upcomingEvents = allEvents.data.filter(
@@ -25,6 +26,7 @@ export default function Home() {
       <PartnersSection />
       <ExecutiveMember />
       <Wings />
+      <EnrollManagementPage />
       {/* <OurTeam /> */}
       {/* <VideoSection /> */}
     </div>
