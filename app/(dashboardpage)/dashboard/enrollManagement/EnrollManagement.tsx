@@ -214,7 +214,7 @@ export default function EnrollManagement({
   return (
     <div className="min-h-screen bg-green-50/50 font-sans">
       {/* Page Header */}
-      <div className="relative bg-gradient-to-br from-green-800 to-green-600 px-8 py-8">
+      <div className="relative bg-linear-to-br from-green-800 to-green-600 px-8 py-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-3 mb-1">
             <div className="w-9 h-9 rounded-xl bg-white/15 border border-white/20 flex items-center justify-center">

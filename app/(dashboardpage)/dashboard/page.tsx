@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import React, { useState } from "react";
 import {
@@ -5,17 +6,14 @@ import {
   UserPlus,
   Trophy,
   Zap,
-  Activity,
   ShieldCheck,
   LayoutDashboard,
   BookOpen,
   CalendarDays,
   CheckCircle2,
   Clock,
-  PlayCircle,
   Handshake,
   TrendingUp,
-  Eye,
   Star,
   ArrowUpRight,
   ChevronRight,
@@ -23,8 +21,6 @@ import {
   Globe,
   Cpu,
   BrainCircuit,
-  Flame,
-  Award,
   Radio,
   CalendarCheck,
 } from "lucide-react";
@@ -511,7 +507,7 @@ export default function DashboardHome() {
               </div>
               <div className="h-1.5 rounded-full bg-gray-100 overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-[#028237] to-[#09c558] rounded-full"
+                  className="h-full bg-linear-to-r from-[#028237] to-[#09c558] rounded-full"
                   style={{ width: `${course.progress}%` }}
                 />
               </div>
@@ -539,7 +535,7 @@ export default function DashboardHome() {
                 key={ev.id}
                 className="flex items-center gap-4 p-3.5 rounded-xl border border-gray-100 hover:border-[#028237]/20 hover:bg-green-50/20 transition-all"
               >
-                <div className="text-center bg-[#028237]/8 rounded-xl px-3 py-2 min-w-[52px]">
+                <div className="text-center bg-[#028237]/8 rounded-xl px-3 py-2 min-w-13">
                   <p className="text-[10px] font-black text-[#028237] uppercase">
                     {ev.date.split(" ")[0]}
                   </p>
@@ -657,7 +653,7 @@ export default function DashboardHome() {
                 key={i}
                 className="flex gap-3 items-start pb-3.5 border-b border-gray-50 last:border-0 last:pb-0"
               >
-                <div className="w-7 h-7 bg-[#028237]/10 rounded-full flex-shrink-0 flex items-center justify-center text-[9px] font-black text-[#028237]">
+                <div className="w-7 h-7 bg-[#028237]/10 rounded-full shrink-0 flex items-center justify-center text-[9px] font-black text-[#028237]">
                   {log.avatar}
                 </div>
                 <div className="min-w-0">

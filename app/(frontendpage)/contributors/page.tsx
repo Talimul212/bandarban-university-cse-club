@@ -84,7 +84,7 @@ export default function ContributorsPage() {
           <div
             key={index}
             tabIndex={0} // Makes card focusable on mobile tap
-            className="group relative h-[350px] md:h-[420px] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100"
+            className="group relative h-87.5 md:h-105 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100"
           >
             {/* Background Image */}
             <Image
@@ -95,7 +95,7 @@ export default function ContributorsPage() {
             />
 
             {/* Dark Gradient Overlay (Static for readability) */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent z-10" />
 
             {/* Default Info (Visible initially, slides up on mobile focus/hover) */}
             <div className="absolute bottom-0 left-0 right-0 z-20 p-6 text-white transition-transform duration-500 group-hover:-translate-y-24 group-focus:-translate-y-24">

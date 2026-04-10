@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { ChevronDown, User, Calendar } from "lucide-react";
+import { ChevronDown, Calendar } from "lucide-react";
 import Image from "next/image";
 
 // ─── TYPES ──────────────────────────────────────────────────────────────────
@@ -129,7 +129,7 @@ const MemberCard = ({ member }: { member: Member }) => (
         className="object-cover group-hover:scale-105 transition-transform duration-500"
       />
     </div>
-    <div className="p-4 flex flex-col flex-grow text-center bg-[#f0fff4]">
+    <div className="p-4 flex flex-col grow text-center bg-[#f0fff4]">
       <h4 className="font-bold text-gray-900 text-sm md:text-base line-clamp-1 mb-1">
         {member.name}
       </h4>
@@ -192,7 +192,7 @@ export default function ExecutiveCommittee() {
                 {/* Accordion Content */}
                 <div
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    isOpen ? "max-h-[5000px] opacity-100" : "max-h-0 opacity-0"
+                    isOpen ? "max-h-1250 opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="p-6 md:p-10">

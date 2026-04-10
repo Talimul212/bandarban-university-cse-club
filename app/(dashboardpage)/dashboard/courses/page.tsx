@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import {
   Plus,
   Search,
@@ -9,8 +10,6 @@ import {
   Trash2,
   ExternalLink,
   GraduationCap,
-  Users,
-  Layers,
 } from "lucide-react";
 import { courses } from "@/app/(frontendpage)/wings/data/courses";
 
@@ -114,10 +113,12 @@ export default function CourseTableDashboard() {
                 >
                   <td className="px-8 py-6">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 border border-gray-100">
-                        <img
+                      <div className="w-12 h-12 rounded-xl overflow-hidden bg-gray-100 shrink-0 border border-gray-100">
+                        <Image
                           src={course.image}
-                          alt=""
+                          alt={course.title}
+                          width={48}
+                          height={48}
                           className="w-full h-full object-cover"
                         />
                       </div>
@@ -139,10 +140,12 @@ export default function CourseTableDashboard() {
 
                   <td className="px-6 py-6">
                     <div className="flex items-center gap-3">
-                      <img
+                      <Image
                         src={course.instructor.avatar}
+                        width={28}
+                        height={28}
                         className="w-7 h-7 rounded-full object-cover border border-gray-200"
-                        alt=""
+                        alt={course.instructor.name}
                       />
                       <span className="text-xs font-bold text-gray-700">
                         {course.instructor.name}
