@@ -9,18 +9,18 @@ export interface Activity {
 export const activityData = [
   {
     id: "act_001",
+    title: "Prize giving Ceremony 2025",
+    subtitle: "CSE Fest 2025",
+    date: "2025-3-20",
+    image: "/images/27.jpg",
+  },
+  {
+    id: "act_002",
     title: "Let's Code Your Career",
     subtitle:
       "A special session hosted by Programming Hero in collaboration with BU CSE Club",
     date: "2025-5-25",
     image: "/images/1.jpg",
-  },
-  {
-    id: "act_002",
-    title: "Prize giving Ceremony 2025",
-    subtitle: "CSE Fest 2025",
-    date: "2025-3-20",
-    image: "/images/27.jpg",
   },
   {
     id: "act_003",

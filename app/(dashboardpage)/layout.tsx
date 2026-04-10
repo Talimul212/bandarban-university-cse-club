@@ -202,7 +202,7 @@ export default function DashboardLayout({
         } shrink-0 top-0 h-screen z-50 flex flex-col bg-[#050f0a] border-r border-[#09c558]/10 transition-all duration-300`}
       >
         {/* Top glow line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#09c558] to-transparent opacity-40" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#09c558] to-transparent opacity-40" />
 
         {/* Logo / Header */}
         <div
@@ -299,7 +299,7 @@ export default function DashboardLayout({
         {/* Topbar */}
         <header className="h-16 shrink-0 sticky top-0 z-40 flex items-center justify-between px-6 bg-[#050f0a] border-b border-[#09c558]/10">
           {/* Top glow line */}
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#09c558] to-transparent opacity-30" />
+          <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#09c558] to-transparent opacity-30" />
 
           <div className="flex items-center gap-2">
             {/* Visit Site pill */}
@@ -373,7 +373,7 @@ export default function DashboardLayout({
             {isDropdownOpen && (
               <div className="absolute top-full right-0 mt-2 w-64 bg-[#050f0a] border border-[#09c558]/15 rounded-2xl shadow-2xl shadow-black/50 py-2 z-50 overflow-hidden">
                 {/* Top glow */}
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#09c558] to-transparent opacity-40" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-[#09c558] to-transparent opacity-40" />
 
                 {/* User info */}
                 <div className="px-4 py-3 border-b border-[#09c558]/10">

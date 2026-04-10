@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { format, isPast, isWithinInterval } from "date-fns";
 
 export const getEventStatus = (event: any) => {

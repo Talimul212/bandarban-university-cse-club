@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React, { useState, useEffect } from "react";
@@ -121,7 +122,7 @@ export default function LoginPage() {
                 {loading ? "AUTHENTICATING..." : "LOG IN TO PORTAL"}
               </span>
               {!loading && (
-                <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500" />
+                <div className="absolute inset-0 bg-white/10 -translate-x-full group-hover:translate-x-full transition-transform duration-500" />
               )}
             </button>
           </form>

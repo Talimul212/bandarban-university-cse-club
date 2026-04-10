@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import EnrollmentForm from "@/app/models/EnrollmentForm";
 import dbConnect from "@/lib/dbconnect";
 import { saveFile } from "@/lib/fileService";

@@ -11,7 +11,6 @@ import {
   RefreshCcw,
   Globe,
   Mail,
-  Lock,
   Terminal,
 } from "lucide-react";
 
@@ -71,7 +70,7 @@ export default function ProperSettings() {
       </div>
 
       {/* 2. Main Terminal Panel */}
-      <div className="flex-1 bg-white roundedshadow-2xl shadow-gray-200/50 border border-gray-100 flex flex-col overflow-hidden">
+      <div className="flex-1 bg-white rounded-[3rem] shadow-2xl shadow-gray-200/50 border border-gray-100 flex flex-col overflow-hidden">
         {/* Terminal Title Bar */}
         <div className="bg-[#1a1d21] px-8 py-5 flex justify-between items-center border-b border-white/5">
           <div className="flex items-center gap-3">
@@ -105,7 +104,7 @@ export default function ProperSettings() {
                     <input
                       type="text"
                       defaultValue="BU CSE Club"
-                      className="w-full pl-14 pr-6 py-4 bg-gray-50 border-2 border-transparent rounded-[1.25rem] text-sm font-medium focus:bg-white focus:border-[#028237]/20 outline-none transition-all"
+                      className="w-full pl-14 pr-6 py-4 bg-gray-50 border-2 border-transparent rounded-4xl text-sm font-medium focus:bg-white focus:border-[#028237]/20 outline-none transition-all"
                     />
                   </div>
                 </div>
@@ -122,7 +121,7 @@ export default function ProperSettings() {
                     <input
                       type="email"
                       defaultValue="cseclub@bu.ac.bd"
-                      className="w-full pl-14 pr-6 py-4 bg-gray-50 border-2 border-transparent rounded-[1.25rem] text-sm font-medium focus:bg-white focus:border-[#028237]/20 outline-none transition-all"
+                      className="w-full pl-14 pr-6 py-4 bg-gray-50 border-2 border-transparent rounded-4xl text-sm font-medium focus:bg-white focus:border-[#028237]/20 outline-none transition-all"
                     />
                   </div>
                 </div>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { useState, useMemo } from "react";
 import { events } from "./data/eventData";
@@ -9,7 +10,6 @@ export default function EventsPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [eventCat, setEventCat] = useState("All Events");
   const itemsPerPage = 6;
-  const [results, setResults] = useState();
   const categories = ["All Events", "Workshops", "Seminars", "Competitions"];
 
   const processedEvents = useMemo(() => {

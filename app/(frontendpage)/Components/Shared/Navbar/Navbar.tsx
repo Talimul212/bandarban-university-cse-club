@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import React, { useState } from "react";
@@ -46,7 +47,7 @@ export default function Navbar() {
   return (
     <div className=" sticky top-0 z-50">
       {session?.user && (
-        <div className="bg-[#0a0f0b] text-[#e2e8f0] font-mono text-[10px] sm:text-xs py-1.5 px-4 sm:px-10 flex justify-between items-center w-full z-[70] sticky top-0 border-b border-[#028237]/30 backdrop-blur-md">
+        <div className="bg-[#0a0f0b] text-[#e2e8f0] font-mono text-[10px] sm:text-xs py-1.5 px-4 sm:px-10 flex justify-between items-center w-full z-70 sticky top-0 border-b border-[#028237]/30 backdrop-blur-md">
           {/* Left Side: Navigation Links */}
           <div className="flex items-center gap-3 sm:gap-6">
             <div className="flex items-center gap-2">

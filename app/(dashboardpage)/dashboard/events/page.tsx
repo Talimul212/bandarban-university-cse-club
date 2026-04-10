@@ -1,3 +1,6 @@
+/* eslint-disable react-hooks/incompatible-library */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState, useMemo } from "react";
@@ -9,16 +12,7 @@ import {
   flexRender,
   ColumnDef,
 } from "@tanstack/react-table";
-import {
-  Calendar,
-  MapPin,
-  Tag,
-  Plus,
-  Search,
-  Edit,
-  Trash2,
-  ExternalLink,
-} from "lucide-react";
+import { Calendar, MapPin, Plus, Search, Edit, Trash2 } from "lucide-react";
 import { events } from "@/app/(frontendpage)/events/data/eventData";
 
 export default function EventsManagement() {

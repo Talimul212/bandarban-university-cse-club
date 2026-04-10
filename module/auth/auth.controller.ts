@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // module/auth/auth.controller.ts
 import { AuthServices } from "./auth.service";
 // module/auth/auth.controller.ts

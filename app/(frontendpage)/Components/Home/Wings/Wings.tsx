@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { BookDown, Code, FolderCode, NotebookPenIcon } from "lucide-react";
+import Link from "next/link";
 const courses = [
   {
     id: 1,
@@ -108,12 +109,12 @@ export default function Wings() {
 
         {/* See More */}
         <div className="mt-14 text-center">
-          <a
+          <Link
             href="/wings"
             className="inline-block border border-green-100 rounded-md bg-white px-8 py-2 font-semibold text-[#09c558] shadow-md transition duration-500 hover:text-amber-50 hover:bg-green-500"
           >
             See all Wings
-          </a>
+          </Link>
         </div>
       </div>
     </section>

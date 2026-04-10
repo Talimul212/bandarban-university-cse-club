@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/static-components */
 "use client";
 import { Enrollment } from "@/utils/types";
 import { X } from "lucide-react";

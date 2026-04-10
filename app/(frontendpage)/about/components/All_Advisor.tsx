@@ -4,48 +4,62 @@ import Image from "next/image";
 export default function All_Advisor() {
   const advisors = [
     {
+      // cspell: disable-next-line
       name: "Dr. Mohammad Mohibullah Siddiquee",
       role: "Vice Chancellor",
       organization: "Bandarban University",
       title: "Professor",
+      // cspell: disable-next-line
       image: "/advisorImg/vc-bubban.jpg",
     },
     {
+      // cspell: disable-next-line
       name: "Dr. Rashed Mustafa",
       role: "Professor",
       organization: "University of Chittagong",
       department: "Computer Science & Engineering",
+      // cspell: disable-next-line
       image: "/advisorImg/Rashed-Mustafasir.jpg",
     },
     {
+      // cspell: disable-next-line
       name: "Dr. Kaushik Deb",
       role: "Professor",
+      // cspell: disable-next-line
       organization: "Chittagong University of Engineering & Technology (CUET)",
+      // cspell: disable-next-line
       image: "/advisorImg/Kaushiksir.png",
     },
     {
+      // cspell: disable-next-line
       name: "Syed Mohammad Minhaj Hossain",
       role: "Chairman",
       organization: "Premier University",
       department: "Department of CSE",
+      // cspell: disable-next-line
       image: "/advisorImg/minhazsir.jpg",
     },
     {
+      // cspell: disable-next-line
       name: "Mohammad Amir Saadat",
       role: "Lecturer",
       organization: "Bandarban University",
+      // cspell: disable-next-line
       image: "/advisorImg/Amirsir.jpeg",
     },
     {
+      // cspell: disable-next-line
       name: "Swaraj Kumar Sharma",
       role: "Lecturer",
       organization: "Bandarban University",
+      // cspell: disable-next-line
       image: "/advisorImg/swarajsir.jpeg",
     },
     {
       name: "Tarakashar Das",
       role: "Mentor / Lecturer",
       organization: "Bandarban University",
+      // cspell: disable-next-line
       image: "/advisorImg/tarakasharsir.jpeg",
     },
   ];
