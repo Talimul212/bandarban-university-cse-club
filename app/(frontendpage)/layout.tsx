@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { GoogleTagManager } from "@next/third-parties/google";
+
 import "aos/dist/aos.css";
-import "./globals.css";
-import { Providers } from "@/components/Providers";
+
+import PageWrapper from "@/components/PageWrapper";
+import "./../globals.css";
+import AOSProvider from "./Components/AOSProvider";
+import Navbar from "./Components/Shared/Navbar/Navbar";
+import BackToTop from "./Components/BackToTop";
+import Footer from "./Components/Shared/Footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,10 +38,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className="min-h-screen">
-          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID as string} />
-          <Providers>{children}</Providers>
-        </main>
+        <AOSProvider />
+        <Navbar />
+        <PageWrapper>
+          <main className="min-h-screen">{children}</main>
+        </PageWrapper>
+        <BackToTop />
+        <Footer />
       </body>
     </html>
   );

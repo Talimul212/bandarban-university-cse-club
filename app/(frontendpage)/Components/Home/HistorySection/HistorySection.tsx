@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import {
   Info,
   Users,
@@ -139,13 +140,13 @@ export default function HistorySection() {
 
           <div className="mt-0   flex flex-col md:flex-row gap-4 justify-center items-center">
             {/* CTA 2: View Courses */}
-            <a
+            <Link
               href="/wings"
               className="flex w-full items-center justify-center gap-2 px-6 py-3 rounded-md border border-[#028237] text-[#028237] font-semibold text-sm shadow-md hover:bg-[#028237]/10 transition"
             >
               <BookOpen className="w-4 h-4" />
               View Courses
-            </a>
+            </Link>
           </div>
           <div className="mt-0   md:flex flex-col md:flex-row gap-4 justify-center items-center">
             {/* CTA 1: Learn More About Us */}

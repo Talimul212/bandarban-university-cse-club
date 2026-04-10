@@ -2,7 +2,53 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
-
+const advisors = [
+  {
+    name: "Dr. Mohammad Mohibullah Siddiquee",
+    role: "Vice Chancellor",
+    organization: "Bandarban University",
+    title: "Professor",
+    image: "../../../../public/advisorImg/vc-bubban.jpg",
+  },
+  {
+    name: "Dr. Rashed Mustafa",
+    role: "Professor",
+    organization: "University of Chittagong",
+    department: "Computer Science & Engineering",
+    image: "../../../../public/advisorImg/Rashed-Mustafasir.jpg",
+  },
+  {
+    name: "Dr. Kaushik Deb",
+    role: "Professor",
+    organization: "Chittagong University of Engineering & Technology (CUET)",
+    image: "../../../../public/advisorImg/Kaushiksir.png",
+  },
+  {
+    name: "Syed Mohammad Minhaj Hossain",
+    role: "Chairman",
+    organization: "Premier University",
+    department: "Department of CSE",
+    image: "../../../../public/advisorImg/minhazsir.jpg",
+  },
+  {
+    name: "Mohammad Amir Saadat",
+    role: "Lecturer",
+    organization: "Bandarban University",
+    image: "../../../../public/advisorImg/Amirsir.jpeg",
+  },
+  {
+    name: "Swaraj Kumar Sharma",
+    role: "Lecturer",
+    organization: "Bandarban University",
+    image: "../../../../public/advisorImg/swarajsir.jpeg",
+  },
+  {
+    name: "Tarakashar Das",
+    role: "Mentor / Lecturer",
+    organization: "Bandarban University",
+    image: "../../../../public/advisorImg/tarakasharsir.jpeg",
+  },
+];
 const committees = [
   {
     year: "2024",

@@ -183,7 +183,7 @@ export default function RecentActivityImageSlider({
             </div>
           </div>
 
-          {/* Thumbnails */}
+          {/* Thumbnails
           <div className="max-w-2xl mx-auto  flex justify-center">
             <Swiper
               onSwiper={setThumbsSwiper}
@@ -240,7 +240,7 @@ export default function RecentActivityImageSlider({
                 );
               })}
             </Swiper>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

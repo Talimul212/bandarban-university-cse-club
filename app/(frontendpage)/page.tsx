@@ -1,3 +1,6 @@
+import { activityData } from "./Components/Home/ActivitiesSlider/ActivitiesSliderData";
+import RecentActivityImageSlider from "./Components/Home/ActivitiesSlider/RecentActivityImageSlider";
+import UpcomingEventSlider from "./Components/Home/ActivitiesSlider/UpCommingEvent";
 import HeroSlider from "./Components/Home/HeroSlider/HeroSlider";
 import { slideData } from "./Components/Home/HeroSlider/SlidesData";
 import HistorySection from "./Components/Home/HistorySection/HistorySection";
@@ -5,11 +8,7 @@ import OurCommunity from "./Components/Home/OurCommunity/OurCommunity";
 import PartnersSection from "./Components/Home/PartnersSection/PartnersSection";
 import ExecutiveMember from "./Components/Home/Team/ExecutiveMember";
 import Wings from "./Components/Home/Wings/Wings";
-import { activityData } from "./Components/Home/ActivitiesSlider/ActivitiesSliderData";
-import RecentActivityImageSlider from "./Components/Home/ActivitiesSlider/RecentActivityImageSlider";
-import UpcomingEventSlider from "./Components/Home/ActivitiesSlider/UpCommingEvent";
 import { events as allEvents } from "./events/data/eventData";
-import VideoSection from "./Components/Home/ActivitiesSlider/VideoSection";
 
 export default function Home() {
   const upcomingEvents = allEvents.data.filter(
