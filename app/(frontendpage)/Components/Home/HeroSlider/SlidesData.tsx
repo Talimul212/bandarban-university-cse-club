@@ -1,5 +1,3 @@
-import { Users, Code2, BarChart3 } from "lucide-react";
-
 export const slideData = [
   {
     id: "1",
