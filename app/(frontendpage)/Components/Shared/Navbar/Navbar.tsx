@@ -14,10 +14,13 @@ import {
   Images,
   Users,
   Mail,
-  Monitor,
+  LayoutDashboard,
+  FileText,
+  LogOut,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { primaryColors } from "@/utils/Color";
+import { signOut, useSession } from "next-auth/react";
 
 const navLinks = [
   { name: "Home", href: "/", icon: <Home size={18} /> },
@@ -30,6 +33,7 @@ const navLinks = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { data: session } = useSession();
   const [drawerOpen, setDrawerOpen] = useState(false);
   React.useEffect(() => {
     if (drawerOpen) {
@@ -40,127 +44,182 @@ export default function Navbar() {
   }, [drawerOpen]);
 
   return (
-    <nav className="bg-[#dafbe7] sticky top-0 z-50 text-black font-[Inter,sans-serif] px-6 py-2 shadow-md">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo + Title */}
-        <Link href="/" className="flex items-center gap-2">
-          <Image
-            src="/CSE_Club_Logo.png"
-            alt="BU CSE Club Logo"
-            width={60}
-            height={60}
-            className="rounded-full"
-          />
-          <div className="flex flex-col leading-tight">
-            <span className={`uppercase text-xs text-[${primaryColors}]`}>
-              Bandarban University
-            </span>
-            <span className="text-sm text-[#195734] font-bold">CSE CLUB</span>
-          </div>
-        </Link>
-
-        {/* Desktop Nav */}
-        <ul className="hidden md:flex gap-6 font-medium">
-          {navLinks.map((link) => (
-            <li key={link.name}>
+    <div className=" sticky top-0 z-50">
+      {session?.user && (
+        <div className="bg-[#0a0f0b] text-[#e2e8f0] font-mono text-[10px] sm:text-xs py-1.5 px-4 sm:px-10 flex justify-between items-center w-full z-[70] sticky top-0 border-b border-[#028237]/30 backdrop-blur-md">
+          {/* Left Side: Navigation Links */}
+          <div className="flex items-center gap-3 sm:gap-6">
+            <div className="flex items-center gap-2">
+              <span className="text-white font-bold">root@bucse</span>
+              <span className="text-white">:~#</span>
               <Link
-                href={link.href}
-                className={`hover:text-[#195734] text-sm uppercase text-[#195734] ${
-                  pathname === link.href
-                    ? "font-bold border-b-2 p-2 border-amber-50"
-                    : ""
-                }`}
+                href="/dashboard"
+                className="flex items-center gap-1.5 text-white hover:bg-[#028237]/20 px-2 py-0.5 rounded transition-all border border-transparent hover:border-[#028237]/30"
               >
-                {link.name}
+                <LayoutDashboard className="w-3 h-3 text-[#ff6900]" />
+                Dashboard
               </Link>
-            </li>
-          ))}
-        </ul>
+            </div>
 
-        {/* Join Button */}
-        <Link
-          href="/member/register"
-          className="hidden md:flex bg-linear-to-r from-[#ff6900] to-[#ffaa00] text-white px-4 py-2 rounded-md font-semibold items-center gap-2 uppercase border border-amber-50 hover:from-[#ffaa00] hover:to-[#ff6900] transition"
-        >
-          <User2 /> Get Involved
-        </Link>
+            <div className="hidden lg:flex items-center gap-5 border-l border-white/10 pl-5">
+              <Link
+                href="/dashboard/services/add"
+                className="flex items-center gap-1.5 hover:text-[#ff6900] transition group"
+              >
+                <Users className="w-3 h-3 text-white group-hover:text-[#ff6900]" />
+                <span className="text-white group-hover:text-white">users</span>
+              </Link>
+              <Link
+                href="/dashboard/enrollManagement"
+                className="flex items-center gap-1.5 hover:text-[#ff6900] transition group"
+              >
+                <FileText className="w-3 h-3 text-white group-hover:text-[#ff6900]" />
+                <span className="text-white">Registration</span>
+              </Link>
+            </div>
+          </div>
 
-        {/* Mobile Menu Icon */}
-        <button
-          className="md:hidden text-[#028237]"
-          onClick={() => setDrawerOpen(true)}
-        >
-          <Menu size={28} />
-        </button>
-      </div>
+          {/* Right Side: User Session */}
+          <div className="flex items-center gap-4">
+            <div className="hidden sm:flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full border border-[#028237]/20">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#ff6900] animate-pulse shadow-[0_0_8px_#ff6900]" />
+              <span className="text-gray-300 italic text-[11px]">
+                "{session.user.name || "admin"}"
+              </span>
+            </div>
 
-      {/* Mobile Drawer */}
-      {/* Overlay (modal background) */}
-      {drawerOpen && (
-        <div
-          onClick={() => setDrawerOpen(false)}
-          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
-        />
+            <button
+              onClick={() => signOut()}
+              className="group flex items-center cursor-pointer gap-1.5 text-gray-400 hover:text-[#ff6900] transition-colors"
+            >
+              <LogOut className="w-3 h-3 group-hover:-translate-x-0.5 transition-transform" />
+              <span className="font-bold text-white">exit()</span>
+            </button>
+          </div>
+        </div>
       )}
-
-      {/* Mobile Drawer */}
-      <div
-        className={`fixed top-0 right-0 h-full w-64 bg-[#dafbe7]/95 shadow-xl z-50 
-    transform transition-transform duration-500 overflow-y-auto
-    ${drawerOpen ? "translate-x-0" : "translate-x-full"}`}
-      >
-        {/* Drawer Header */}
-        <div className="flex items-center justify-between px-6 py-4 mt-2 border-b border-amber-50">
-          <div className="flex items-center gap-2">
+      <nav className="bg-[#dafbe7] sticky top-0 z-50 text-black font-[Inter,sans-serif] px-6 py-2 shadow-md">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          {/* Logo + Title */}
+          <Link href="/" className="flex items-center gap-2">
             <Image
               src="/CSE_Club_Logo.png"
               alt="BU CSE Club Logo"
-              width={40}
-              height={40}
-              className="bg-white rounded-md"
+              width={60}
+              height={60}
+              className="rounded-full"
             />
-            <p className="text-[#028237] font-bold text-lg flex flex-col">
-              BU
-              <span className="text-xs">CSE CLUB</span>
-            </p>
-          </div>
-          <button
-            className="text-green-600  "
-            onClick={() => setDrawerOpen(false)}
+            <div className="flex flex-col leading-tight">
+              <span className={`uppercase text-xs text-[${primaryColors}]`}>
+                Bandarban University
+              </span>
+              <span className="text-sm text-[#195734] font-bold">CSE CLUB</span>
+            </div>
+          </Link>
+
+          {/* Desktop Nav */}
+          <ul className="hidden md:flex gap-6 font-medium">
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                <Link
+                  href={link.href}
+                  className={`hover:text-[#195734] text-sm uppercase text-[#195734] ${
+                    pathname === link.href
+                      ? "font-bold border-b-2 p-2 border-amber-50"
+                      : ""
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* Join Button */}
+          <Link
+            href="/member/register"
+            className="hidden md:flex bg-linear-to-r from-[#ff6900] to-[#ffaa00] text-white px-4 py-2 rounded-md font-semibold items-center gap-2 uppercase border border-amber-50 hover:from-[#ffaa00] hover:to-[#ff6900] transition"
           >
-            <X size={25} />
+            <User2 /> Get Involved
+          </Link>
+
+          {/* Mobile Menu Icon */}
+          <button
+            className="md:hidden text-[#028237]"
+            onClick={() => setDrawerOpen(true)}
+          >
+            <Menu size={28} />
           </button>
         </div>
 
-        {/* Drawer Links */}
-        <ul className="flex flex-col gap-10 px-6 py-4">
-          {navLinks.map((link) => (
-            <li key={link.name}>
-              <Link
-                href={link.href}
-                className={`flex items-center gap-2 text-[#028237] text-sm uppercase font-medium ${
-                  pathname === link.href ? "font-bold" : ""
-                }`}
-                onClick={() => setDrawerOpen(false)}
-              >
-                {link.icon} {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        {/* Join Button */}
-        <div className="px-6 mt-4 mb-10">
-          <Link
-            href="/member/register"
-            className="bg-linear-to-r from-[#ff6900] to-[#ffaa00] text-white px-4 py-2 rounded-md font-semibold flex items-center gap-2 uppercase border border-amber-50 hover:from-[#ffaa00] hover:to-[#ff6900] transition"
+        {/* Mobile Drawer */}
+        {/* Overlay (modal background) */}
+        {drawerOpen && (
+          <div
             onClick={() => setDrawerOpen(false)}
-          >
-            <User2 />
-            Get Involved
-          </Link>
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+          />
+        )}
+
+        {/* Mobile Drawer */}
+        <div
+          className={`fixed top-0 right-0 h-full w-64 bg-[#dafbe7]/95 shadow-xl z-50 
+    transform transition-transform duration-500 overflow-y-auto
+    ${drawerOpen ? "translate-x-0" : "translate-x-full"}`}
+        >
+          {/* Drawer Header */}
+          <div className="flex items-center justify-between px-6 py-4 mt-2 border-b border-amber-50">
+            <div className="flex items-center gap-2">
+              <Image
+                src="/CSE_Club_Logo.png"
+                alt="BU CSE Club Logo"
+                width={40}
+                height={40}
+                className="bg-white rounded-md"
+              />
+              <p className="text-[#028237] font-bold text-lg flex flex-col">
+                BU
+                <span className="text-xs">CSE CLUB</span>
+              </p>
+            </div>
+            <button
+              className="text-green-600  "
+              onClick={() => setDrawerOpen(false)}
+            >
+              <X size={25} />
+            </button>
+          </div>
+
+          {/* Drawer Links */}
+          <ul className="flex flex-col gap-10 px-6 py-4">
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                <Link
+                  href={link.href}
+                  className={`flex items-center gap-2 text-[#028237] text-sm uppercase font-medium ${
+                    pathname === link.href ? "font-bold" : ""
+                  }`}
+                  onClick={() => setDrawerOpen(false)}
+                >
+                  {link.icon} {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* Join Button */}
+          <div className="px-6 mt-4 mb-10">
+            <Link
+              href="/member/register"
+              className="bg-linear-to-r from-[#ff6900] to-[#ffaa00] text-white px-4 py-2 rounded-md font-semibold flex items-center gap-2 uppercase border border-amber-50 hover:from-[#ffaa00] hover:to-[#ff6900] transition"
+              onClick={() => setDrawerOpen(false)}
+            >
+              <User2 />
+              Get Involved
+            </Link>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 }

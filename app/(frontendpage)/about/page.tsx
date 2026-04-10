@@ -2,6 +2,7 @@
 import React from "react";
 import { Star, CalendarDays } from "lucide-react";
 import All_Executives from "./components/All_Executives";
+import All_Advisor from "./components/All_Advisor";
 
 const timelineEvents = [
   {
@@ -145,6 +146,7 @@ export default function Page() {
           })}
         </div>
       </div>
+      <All_Advisor />
       <All_Executives />
     </div>
   );

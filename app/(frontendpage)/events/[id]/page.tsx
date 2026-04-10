@@ -3,12 +3,12 @@ import { events } from "../data/eventData";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { getEventStatus, formatRange } from "../../../utils/eventHelper";
 import CountdownTimer from "@/components/CountdownTimer";
 import { Boxes, CalendarDays, MapPin } from "lucide-react";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import { formatRange, getEventStatus } from "@/utils/eventHelper";
 // This is a Server Component
 export default function Page() {
   const params = useParams();

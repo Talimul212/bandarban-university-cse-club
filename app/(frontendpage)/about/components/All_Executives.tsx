@@ -1,55 +1,23 @@
 "use client";
 import React, { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, User, Calendar } from "lucide-react";
 import Image from "next/image";
-const advisors = [
-  {
-    name: "Dr. Mohammad Mohibullah Siddiquee",
-    role: "Vice Chancellor",
-    organization: "Bandarban University",
-    title: "Professor",
-    image: "../../../../public/advisorImg/vc-bubban.jpg",
-  },
-  {
-    name: "Dr. Rashed Mustafa",
-    role: "Professor",
-    organization: "University of Chittagong",
-    department: "Computer Science & Engineering",
-    image: "../../../../public/advisorImg/Rashed-Mustafasir.jpg",
-  },
-  {
-    name: "Dr. Kaushik Deb",
-    role: "Professor",
-    organization: "Chittagong University of Engineering & Technology (CUET)",
-    image: "../../../../public/advisorImg/Kaushiksir.png",
-  },
-  {
-    name: "Syed Mohammad Minhaj Hossain",
-    role: "Chairman",
-    organization: "Premier University",
-    department: "Department of CSE",
-    image: "../../../../public/advisorImg/minhazsir.jpg",
-  },
-  {
-    name: "Mohammad Amir Saadat",
-    role: "Lecturer",
-    organization: "Bandarban University",
-    image: "../../../../public/advisorImg/Amirsir.jpeg",
-  },
-  {
-    name: "Swaraj Kumar Sharma",
-    role: "Lecturer",
-    organization: "Bandarban University",
-    image: "../../../../public/advisorImg/swarajsir.jpeg",
-  },
-  {
-    name: "Tarakashar Das",
-    role: "Mentor / Lecturer",
-    organization: "Bandarban University",
-    image: "../../../../public/advisorImg/tarakasharsir.jpeg",
-  },
-];
-const committees = [
+
+// ─── TYPES ──────────────────────────────────────────────────────────────────
+interface Member {
+  name: string;
+  role: string;
+  term: string;
+  photo: string;
+}
+
+interface Committee {
+  year: string;
+  description: string;
+  members: Member[];
+}
+
+const committees: Committee[] = [
   {
     year: "2024",
     description:
@@ -150,68 +118,99 @@ const committees = [
   },
 ];
 
+// ─── SUB-COMPONENT: MEMBER CARD ──────────────────────────────────────────────
+const MemberCard = ({ member }: { member: Member }) => (
+  <div className="group bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 flex flex-col h-full">
+    <div className="relative aspect-3/4 w-full overflow-hidden bg-gray-50">
+      <Image
+        src={member.photo}
+        alt={member.name}
+        fill
+        className="object-cover group-hover:scale-105 transition-transform duration-500"
+      />
+    </div>
+    <div className="p-4 flex flex-col flex-grow text-center bg-[#f0fff4]">
+      <h4 className="font-bold text-gray-900 text-sm md:text-base line-clamp-1 mb-1">
+        {member.name}
+      </h4>
+      <p className="text-[#028237] font-semibold text-xs mb-2 uppercase tracking-wide">
+        {member.role}
+      </p>
+      <div className="mt-auto pt-2 border-t border-[#028237]/10 flex items-center justify-center gap-1.5 text-gray-500 text-[10px] font-bold">
+        <Calendar className="w-3 h-3" />
+        <span>SESSION {member.term}</span>
+      </div>
+    </div>
+  </div>
+);
+
+// ─── MAIN COMPONENT ──────────────────────────────────────────────────────────
 export default function ExecutiveCommittee() {
-  const [openYear, setOpenYear] = useState<string | null>(null);
+  // Default to opening the most recent year
+  const [openYear, setOpenYear] = useState<string | null>("2025");
 
   const toggleYear = (year: string) => {
     setOpenYear(openYear === year ? null : year);
   };
 
   return (
-    <section className="py-16 px-6 bg-gray-50">
-      <div className="md:w-[95%] w-full mx-auto">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-[#028237] text-center mb-12">
-          Executive Committees
-        </h2>
+    <section className="py-20 px-4 bg-gray-50">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-black text-[#028237] mb-4">
+            Executive Committees
+          </h2>
+          <div className="w-20 h-1.5 bg-[#ff6900] mx-auto rounded-full" />
+        </div>
 
-        {committees.map((committee) => (
-          <div
-            key={committee.year}
-            className="mb-6 border rounded bg-white shadow"
-          >
-            {/* Accordion Header */}
-            <button
-              onClick={() => toggleYear(committee.year)}
-              className="w-full flex justify-between items-center px-6 py-4 text-left text-lg font-semibold text-[#028237] cursor-pointer bg-[#028237]/10 transition"
-            >
-              <span>Executive Committee – {committee.year}</span>
-              <ChevronDown
-                className={`w-5 h-5 transition-transform ${
-                  openYear === committee.year ? "rotate-180" : ""
-                }`}
-              />
-            </button>
+        <div className="space-y-6">
+          {committees.map((committee) => {
+            const isOpen = openYear === committee.year;
 
-            {/* Accordion Content */}
-            {openYear === committee.year && (
-              <div className="px-6 pb-6 pt-2">
-                <p className="text-sm text-gray-700 hidden md:block mb-6">
-                  {committee.description}
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                  {committee.members.map((member, i) => (
-                    <div
-                      key={i}
-                      className="bg-[#E3F9E7]   rounded shadow hover:shadow-md transition flex flex-col items-center text-center"
-                    >
-                      <Image
-                        src={member.photo}
-                        alt={member.name}
-                        width={300}
-                        height={300}
-                        className="w-full h-full rounded-t object-cover mb-3 border-2 border-[#028237]/30"
-                      />
+            return (
+              <div
+                key={committee.year}
+                className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200"
+              >
+                {/* Accordion Header */}
+                <button
+                  onClick={() => toggleYear(committee.year)}
+                  className={`w-full flex justify-between items-center px-6 py-5 text-left transition-colors ${
+                    isOpen
+                      ? "bg-[#028237] text-white"
+                      : "bg-white text-[#028237] hover:bg-gray-50"
+                  }`}
+                >
+                  <span className="text-lg md:text-xl font-bold tracking-tight">
+                    Executive Committee – {committee.year}
+                  </span>
+                  <ChevronDown
+                    className={`w-6 h-6 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
 
-                      <span className="text-lg uppercase mb-3 text-black font-bold mt-1">
-                        Session- {member.term}
-                      </span>
+                {/* Accordion Content */}
+                <div
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                    isOpen ? "max-h-[5000px] opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="p-6 md:p-10">
+                    <p className="text-gray-600 mb-10 max-w-3xl leading-relaxed italic border-l-4 border-[#ff6900] pl-4">
+                      {committee.description}
+                    </p>
+
+                    <div className="grid grid-cols-1  md:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
+                      {committee.members.map((member, i) => (
+                        <MemberCard key={i} member={member} />
+                      ))}
                     </div>
-                  ))}
+                  </div>
                 </div>
               </div>
-            )}
-          </div>
-        ))}
+            );
+          })}
+        </div>
       </div>
     </section>
   );

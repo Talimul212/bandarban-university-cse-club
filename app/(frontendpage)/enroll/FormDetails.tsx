@@ -261,6 +261,7 @@ export default function FormDetails() {
     educationCert: { file: null, preview: null, error: null },
     signature: { file: null, preview: null, error: null },
   });
+
   // File change handler
   const handleFileChange =
     (key: string) => (file: File | null, preview: string | null) => {
@@ -354,6 +355,7 @@ export default function FormDetails() {
   // Form Submission handler
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (!validate()) {
       const firstErrorEl = document.querySelector("[data-error='true']");
       firstErrorEl?.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -362,17 +364,42 @@ export default function FormDetails() {
 
     setIsSubmitting(true);
 
-    // API call
-    await new Promise((res) => setTimeout(res, 2000)); // demo async delay
+    try {
+      const fd = new FormData();
+      Object.entries(formData).forEach(([k, v]) => {
+        if (k === "educationList") {
+          fd.append(k, JSON.stringify(v));
+        } else {
+          fd.append(k, v as string);
+        }
+      });
 
-    // For the backend database submission logic is here
-    // const fd = new FormData();
-    // Object.entries(formData).forEach(([k, v]) => fd.append(k, typeof v === 'string' ? v : JSON.stringify(v)));
-    // if (files.nid.file) fd.append('nid', files.nid.file);
-    // await fetch('/api/enrollment', { method: 'POST', body: fd });
+      Object.entries(enrollData).forEach(([k, v]) => {
+        fd.append(k, v);
+      });
 
-    setIsSubmitting(false);
-    setSubmitted(true);
+      if (files.nid.file) fd.append("nid", files.nid.file);
+      if (files.birthCert.file) fd.append("birthCert", files.birthCert.file);
+      if (files.educationCert.file)
+        fd.append("educationCert", files.educationCert.file);
+      if (files.signature.file) fd.append("signature", files.signature.file);
+
+      const response = await fetch("/api/enrollments", {
+        method: "POST",
+        body: fd,
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Failed to submit form");
+      }
+
+      setSubmitted(true);
+    } catch (error: any) {
+      alert(error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const fullName =
@@ -443,7 +470,9 @@ export default function FormDetails() {
     );
   }
 
-  // Form UI
+  // ==========================
+  // Main Form UI IS START FROM HERE
+  // ========================
   return (
     <div className="min-h-screen bg-slate-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
@@ -545,10 +574,14 @@ export default function FormDetails() {
                     value={formData.gender}
                     onChange={handleChange}
                     className={inputCls}
+                    required
                   >
-                    <option>Male</option>
-                    <option>Female</option>
-                    <option>Other</option>
+                    <option value="" disabled selected>
+                      Select Gender
+                    </option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
                   </select>
                 </InputField>
 
@@ -828,11 +861,14 @@ export default function FormDetails() {
                     onChange={handleChange}
                     className={inputCls}
                   >
-                    <option>Bank Transfer</option>
-                    <option>Credit Card</option>
-                    <option>Mobile Banking (bKash)</option>
-                    <option>Mobile Banking (Nagad)</option>
-                    <option>Cash</option>
+                    <option value="" disabled selected>
+                      Payment Method
+                    </option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="bKash">bKash</option>
+                    <option value="Nagad">Nagad</option>
+                    <option value="Cash">Cash</option>
                   </select>
                 </InputField>
 

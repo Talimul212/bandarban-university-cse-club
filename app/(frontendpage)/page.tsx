@@ -24,6 +24,7 @@ export default function Home() {
       <PartnersSection />
       <ExecutiveMember />
       <Wings />
+      {/* <EnrollManagement /> */}
       {/* <OurTeam /> */}
       {/* <VideoSection /> */}
     </div>

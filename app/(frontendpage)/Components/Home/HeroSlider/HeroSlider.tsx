@@ -31,6 +31,12 @@ export default function HeroSlider({ slides }: Props) {
           nextEl: ".swiper-button-next-custom",
           prevEl: ".swiper-button-prev-custom",
         }}
+        pagination={{
+          clickable: true,
+          el: ".swiper-pagination-custom",
+          bulletClass: "hero-bullet",
+          bulletActiveClass: "hero-bullet-active",
+        }}
         className="h-full"
       >
         {slides.map((slide) => (
@@ -87,8 +93,8 @@ export default function HeroSlider({ slides }: Props) {
         ))}
       </Swiper>
 
-      {/* Navigation buttons */}
-      <div className="absolute bottom-37.5 md:bottom-24 left-36  md:left-16 z-20 flex gap-3">
+      {/* Navigation buttons — original position */}
+      <div className="absolute bottom-37.5 md:bottom-24 left-36 md:left-16 z-20 flex gap-3">
         <button className="swiper-button-prev-custom flex h-10 w-10 items-center justify-center rounded-full bg-white/80 hover:bg-white">
           <ChevronLeft className="text-[#ff6900]" />
         </button>
@@ -96,6 +102,53 @@ export default function HeroSlider({ slides }: Props) {
           <ChevronRight className="text-[#ff6900]" />
         </button>
       </div>
+
+      {/* Animated Pagination — centered at bottom */}
+      <div className="swiper-pagination-custom absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2" />
+
+      <style>{`
+        /* Inactive dot */
+        .hero-bullet {
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          border-radius: 9999px;
+          background: rgba(255, 255, 255, 0.35);
+          cursor: pointer;
+          transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                      background 0.4s ease,
+                      box-shadow 0.4s ease;
+          position: relative;
+          overflow: hidden;
+        }
+
+        /* Active dot — expands into a pill */
+        .hero-bullet-active {
+          width: 36px;
+          background: rgba(255, 255, 255, 0.15);
+          box-shadow: 0 0 10px rgba(9, 197, 88, 0.45);
+        }
+
+        /* Fill bar that sweeps across the active pill in sync with autoplay */
+        .hero-bullet-active::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background: #09c558;
+          border-radius: 9999px;
+          transform: scaleX(0);
+          transform-origin: left center;
+          animation: bulletProgress 5s linear forwards;
+        }
+
+        @keyframes bulletProgress {
+          from { transform: scaleX(0); }
+          to   { transform: scaleX(1); }
+        }
+      `}</style>
     </section>
   );
 }

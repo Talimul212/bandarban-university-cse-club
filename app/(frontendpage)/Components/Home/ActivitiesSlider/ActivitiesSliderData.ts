@@ -70,34 +70,34 @@ export const activityData = [
     date: "2025-10-15",
     image: "/images/25.jpg",
   },
-  {
-    id: "act_009",
-    title: "Workshop Recap",
-    subtitle: "UI/UX Design Principles",
-    date: "2025-10-15",
-    image: "/bu_cse_video.mp4",
-  },
-  {
-    id: "act_010",
-    title: "Workshop Recap",
-    subtitle: "UI/UX Design Principles",
-    date: "2025-10-15",
-    image: "/bu_cse_2.mp4",
-  },
-  {
-    id: "act_011",
-    title: "Workshop Recap",
-    subtitle: "UI/UX Design Principles",
-    date: "2025-10-15",
-    image: "/bu_cse_3.mp4",
-  },
-  {
-    id: "act_012",
-    title: "Workshop Recap",
-    subtitle: "UI/UX Design Principles",
-    date: "2025-10-15",
-    image: "/bu_cse_4.mp4",
-  },
+  // {
+  //   id: "act_009",
+  //   title: "Workshop Recap",
+  //   subtitle: "UI/UX Design Principles",
+  //   date: "2025-10-15",
+  //   image: "/bu_cse_video.mp4",
+  // },
+  // {
+  //   id: "act_010",
+  //   title: "Workshop Recap",
+  //   subtitle: "UI/UX Design Principles",
+  //   date: "2025-10-15",
+  //   image: "/bu_cse_2.mp4",
+  // },
+  // {
+  //   id: "act_011",
+  //   title: "Workshop Recap",
+  //   subtitle: "UI/UX Design Principles",
+  //   date: "2025-10-15",
+  //   image: "/bu_cse_3.mp4",
+  // },
+  // {
+  //   id: "act_012",
+  //   title: "Workshop Recap",
+  //   subtitle: "UI/UX Design Principles",
+  //   date: "2025-10-15",
+  //   image: "/bu_cse_4.mp4",
+  // },
 ];
 export const videoSectionData = [
   {

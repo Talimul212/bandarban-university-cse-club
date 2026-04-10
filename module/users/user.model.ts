@@ -1,5 +1,4 @@
 import { Schema, model, models } from "mongoose";
-import bcrypt from "bcrypt";
 import { IUser } from "./users.interface";
 
 const userSchema = new Schema<IUser>(
@@ -17,10 +16,6 @@ const userSchema = new Schema<IUser>(
   { timestamps: true },
 );
 
-// Hash password before saving to DB
-userSchema.pre("save", async function () {
-  if (!this.isModified("password")) return;
-  this.password = await bcrypt.hash(this.password, 12);
-});
+// Password hashing middleware removed from here
 
 export const UserModel = models.User || model<IUser>("User", userSchema);
