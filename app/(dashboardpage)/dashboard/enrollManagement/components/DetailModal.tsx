@@ -11,7 +11,8 @@ function DetailModal({
   enrollment: Enrollment;
   onClose: () => void;
 }) {
-  const baseUrl = "http://localhost:3000";
+  // const baseUrl = "http://localhost:3000";
+  const baseUrl = "https://bandarban-university-cse-club.vercel.app";
 
   const Field = ({ label, value }: { label: string; value: string }) => (
     <div>
